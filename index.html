@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Descubre Ecuador - Sitios Turísticos</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #e0e0e0;
+        background: #0f1115;
+      }
+      header {
+        background: linear-gradient(
+          135deg,
+          #1a1a2e 0%,
+          #16213e 50%,
+          #0f3460 100%
+        );
+        color: #f0f0f0;
+        padding: 1rem 0;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1.6rem;
+        font-weight: bold;
+      }
+      .logo-icon {
+        font-size: 2.2rem;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+      }
+      nav a {
+        color: #a0d8ef;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        background: rgba(160, 216, 239, 0.1);
+      }
+      nav a:hover {
+        background: #a0d8ef;
+        color: #0f1115;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(160, 216, 239, 0.3);
+      }
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.8)),
+          url("https://images.unsplash.com/photo-1518002054494-3a6f94352e9d?w=1600")
+            center/cover;
+        height: 550px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+      .hero-content h1 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(90deg, #a0d8ef, #e63946);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .hero-content p {
+        font-size: 1.4rem;
+        max-width: 750px;
+        color: #cfd8dc;
+      }
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+      }
+      h2 {
+        color: #a0d8ef;
+        font-size: 2.6rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 4px solid #e63946;
+        padding-bottom: 0.5rem;
+        position: relative;
+      }
+      h2::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 120px;
+        height: 4px;
+        background: linear-gradient(90deg, #a0d8ef, #e63946);
+        border-radius: 2px;
+      }
+      .intro {
+        font-size: 1.15rem;
+        line-height: 1.9;
+        color: #b0bec5;
+        margin-bottom: 2rem;
+        background: rgba(15, 17, 21, 0.7);
+        padding: 1.5rem;
+        border-radius: 12px;
+        border-left: 5px solid #a0d8ef;
+      }
+      .regions {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+      .region-card {
+        background: #16213e;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        transition: all 0.4s ease;
+        border: 1px solid rgba(160, 216, 239, 0.2);
+      }
+      .region-card:hover {
+        transform: translateY(-18px) scale(1.03);
+        box-shadow: 0 20px 50px rgba(160, 216, 239, 0.25);
+        border: 1px solid #a0d8ef;
+      }
+      .region-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        filter: brightness(0.85);
+      }
+      .region-card:hover img {
+        filter: brightness(1);
+      }
+      .region-info {
+        padding: 1.8rem;
+      }
+      .region-info h3 {
+        color: #a0d8ef;
+        margin-bottom: 0.7rem;
+        font-size: 1.4rem;
+      }
+      .destinations-list {
+        background: linear-gradient(135deg, #16213e 0%, #1a1a2e 100%);
+        padding: 3rem;
+        border-radius: 18px;
+        margin-top: 2rem;
+        border: 1px solid rgba(160, 216, 239, 0.3);
+      }
+      .destinations-list ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.2rem;
+      }
+      .destinations-list li {
+        background: #1e2a44;
+        padding: 1.4rem;
+        border-radius: 12px;
+        border-left: 6px solid #e63946;
+        transition: all 0.4s ease;
+      }
+      .destinations-list li:hover {
+        transform: translateX(12px) scale(1.04);
+        border-left-color: #a0d8ef;
+      }
+      .destinations-list li::before {
+        content: "✈️ ";
+        color: #a0d8ef;
+      }
+      .video-section {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        padding: 3.5rem 2.5rem;
+        border-radius: 20px;
+        margin-top: 2rem;
+        border: 1px solid rgba(160, 216, 239, 0.2);
+      }
+      .videos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        gap: 2.5rem;
+        margin-top: 2rem;
+      }
+      .video-container {
+        background: #1e2a44;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+        transition: all 0.4s ease;
+      }
+      .video-container:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 25px 60px rgba(160, 216, 239, 0.3);
+      }
+      .video-container video {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        display: block;
+      }
+      .video-info {
+        padding: 1.4rem;
+      }
+      .video-info h4 {
+        color: #a0d8ef;
+        margin-bottom: 0.6rem;
+        font-size: 1.25rem;
+      }
+      .video-info p {
+        font-size: 0.95rem;
+        color: #b0bec5;
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+      .stat-card {
+        background: linear-gradient(135deg, #e63946 0%, #c1121f 100%);
+        color: white;
+        padding: 2.8rem;
+        border-radius: 18px;
+        text-align: center;
+        box-shadow: 0 12px 30px rgba(230, 57, 70, 0.4);
+      }
+      .stat-card:hover {
+        transform: translateY(-12px) scale(1.06);
+      }
+      .stat-card:nth-child(2) {
+        background: linear-gradient(135deg, #a0d8ef 0%, #6fb3d2 100%);
+      }
+      .stat-card:nth-child(3) {
+        background: linear-gradient(135deg, #6d28d9 0%, #4c1d95 100%);
+      }
+      .stat-card:nth-child(4) {
+        background: linear-gradient(135deg, #06ffa5 0%, #00cc83 100%);
+      }
+      .stat-number {
+        font-size: 3.5rem;
+        font-weight: bold;
+      }
+
+      /* === ESTILOS DEL FORMULARIO === */
+      .contact-section {
+        background: linear-gradient(135deg, #16213e 0%, #1a1a2e 100%);
+        padding: 3.5rem 2.5rem;
+        border-radius: 20px;
+        margin-top: 3rem;
+        border: 1px solid rgba(160, 216, 239, 0.3);
+      }
+
+      .contact-form {
+        max-width: 800px;
+        margin: 2rem auto 0;
+        background: #1e2a44;
+        padding: 3rem;
+        border-radius: 18px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+      }
+
+      .form-group {
+        margin-bottom: 1.8rem;
+      }
+
+      .form-group label {
+        display: block;
+        color: #a0d8ef;
+        font-weight: 600;
+        margin-bottom: 0.6rem;
+        font-size: 1.05rem;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 1rem;
+        background: #0f1115;
+        border: 2px solid rgba(160, 216, 239, 0.3);
+        border-radius: 10px;
+        color: #e0e0e0;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: #a0d8ef;
+        box-shadow: 0 0 15px rgba(160, 216, 239, 0.3);
+      }
+
+      .form-group textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+
+      .submit-btn {
+        padding: 1.3rem;
+        background: linear-gradient(135deg, #e63946 0%, #c1121f 100%);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        box-shadow: 0 8px 20px rgba(230, 57, 70, 0.4);
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(230, 57, 70, 0.6);
+      }
+
+      .reset-btn {
+        padding: 1.3rem;
+        background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        box-shadow: 0 8px 20px rgba(108, 117, 125, 0.4);
+      }
+
+      .reset-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(108, 117, 125, 0.6);
+        background: linear-gradient(135deg, #495057 0%, #343a40 100%);
+      }
+
+      /* === FOOTER ÉPICO 2025 === */
+      footer {
+        background: linear-gradient(135deg, #0a0e17 0%, #1a1a2e 100%);
+        color: #b0bec5;
+        padding: 4rem 2rem 2rem;
+        margin-top: 6rem;
+        border-top: 4px solid #e63946;
+        position: relative;
+        overflow: hidden;
+      }
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, #a0d8ef, #e63946, #a0d8ef);
+      }
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 3rem;
+      }
+      .footer-section h3 {
+        color: #fff;
+        font-size: 1.4rem;
+        margin-bottom: 1.2rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+      .footer-section h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: #e63946;
+        border-radius: 2px;
+      }
+      .footer-section ul {
+        list-style: none;
+      }
+      .footer-section ul li {
+        margin-bottom: 0.8rem;
+      }
+      .footer-section a,
+      .footer-section li {
+        color: #b0bec5;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+      .footer-section a:hover {
+        color: #a0d8ef;
+        transform: translateX(8px);
+      }
+      .footer-section a::before {
+        content: "→ ";
+        opacity: 0;
+        transition: 0.3s;
+      }
+      .footer-section a:hover::before {
+        opacity: 1;
+      }
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 3rem auto 0;
+        padding-top: 2rem;
+        border-top: 1px dashed rgba(160, 216, 239, 0.3);
+        text-align: center;
+        color: #78909c;
+        font-size: 0.9rem;
+      }
+      .footer-bottom p:first-child {
+        font-weight: bold;
+        color: #a0d8ef;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+        .videos-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">🇪🇨</span>
+          <span>ECUADOR TURÍSTICO</span>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#destinos">Destinos</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#estadisticas">Estadísticas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <h1>Ecuador, brilla auténticamente</h1>
+        <p>Descubre la magia de un país ubicado en el corazón del mundo</p>
+      </div>
+    </section>
+
+    <main>
+      <section>
+        <h2>Bienvenido a Ecuador</h2>
+        <p class="intro">
+          Ecuador está ubicado en el corazón del planeta, justo en la mitad del
+          mundo, un lugar mágico donde el sol brilla 12 horas exactas todo el
+          año y la naturaleza nunca duerme. En tan solo 283.000 km² conviven
+          cuatro mundos irrepetibles: la Costa con playas infinitas y ballenas
+          que saludan desde el Pacífico, la Sierra andina con volcanes nevados y
+          ciudades coloniales que parecen sacadas de un cuento, la Amazonía
+          donde cada árbol guarda más vida que toda Europa junta, y las Islas
+          Galápagos, el laboratorio vivo de Darwin donde las tortugas gigantes y
+          los piqueros de patas azules te reciben como en casa. Aquí puedes
+          desayunar viendo el mar, almorzar a 4.000 metros de altura y cenar con
+          pingüinos… ¡todo en el mismo día! Ecuador no es un destino, es una
+          experiencia que te cambia para siempre.
+        </p>
+        <p class="intro">
+          Cuatro regiones naturales te esperan en menos de 280.000 km²: la Costa
+          con playas de arena blanca y ballenas que saltan a dos metros de tu
+          bote, la Sierra donde los volcanes nevados como el Chimborazo tocan el
+          cielo a casi 6.300 metros, la Amazonía que guarda el 10 % de toda la
+          biodiversidad del planeta y las Islas Galápagos, el único lugar del
+          mundo donde puedes nadar con pingüinos por la mañana y caminar entre
+          tortugas centenarias por la tarde. Aquí no necesitas cambiar de país
+          para cambiar de mundo: en un solo día puedes desayunar con ceviche
+          frente al Pacífico, almorzar chocolate caliente a 4.000 m de altura y
+          terminar la noche viendo estrellas sobre un desierto de lava. ¡Ecuador
+          es el país donde el tiempo se detiene y la aventura nunca termina!
+        </p>
+
+        <div class="regions">
+          <div class="region-card">
+            <img src="imagenes/costa.jpg" alt="Costa" />
+            <div class="region-info">
+              <h3>🏖️ Playa Costa</h3>
+              <p>Playas paradisíacas y ceviche brutal</p>
+            </div>
+          </div>
+          <div class="region-card">
+            <img src="imagenes/sierra.jpg" alt="Sierra" />
+            <div class="region-info">
+              <h3>⛰️ Montaña Sierra</h3>
+              <p>Volcanes activos y ciudades coloniales</p>
+            </div>
+          </div>
+          <div class="region-card">
+            <img src="imagenes/amazonia.jpg" alt="Amazonía" />
+            <div class="region-info">
+              <h3>🌿 Selva Amazonía</h3>
+              <p>Selva viva con más animales que en Netflix</p>
+            </div>
+          </div>
+          <div class="region-card">
+            <img src="imagenes/galapagos.jpg" alt="Galápagos" />
+            <div class="region-info">
+              <h3>🐢 Tortuga Galápagos</h3>
+              <p>Donde las tortugas son influencers</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="destinos">
+        <h2>Destinos Imperdibles</h2>
+        <div class="destinations-list">
+          <h3>Los 12 lugares que TIENES que visitar:</h3>
+          <ul>
+            <li><strong>Quito</strong> - Capital más alta del mundo</li>
+            <li><strong>Galápagos</strong> - Paraíso de Darwin</li>
+            <li><strong>Baños</strong> - Columpio del fin del mundo</li>
+            <li><strong>Montañita</strong> - Surf y fiesta 24/7</li>
+            <li><strong>Cotopaxi</strong> - Volcán perfecto</li>
+            <li><strong>Quilotoa</strong> - Laguna esmeralda</li>
+            <li><strong>Cuenca</strong> - La más bonita</li>
+            <li><strong>Guayaquil</strong> - Malecón 2000</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="stats-section" id="estadisticas">
+        <h2>Ecuador en Números</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Regiones</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2.7M</div>
+            <div class="stat-label">Turistas/año</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">10%</div>
+            <div class="stat-label">Biodiversidad Mundial</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">24</div>
+            <div class="stat-label">Provincias</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="video-section" id="videos">
+        <h2>Descubre Ecuador en Video</h2>
+        <div class="videos-grid">
+          <div class="video-container">
+            <video controls poster="videos/ecuador.jpg">
+              <source src="videos/ecuador.mp4" type="video/mp4" />
+              Tu navegador no soporta video.
+            </video>
+            <div class="video-info">
+              <h4>Ecuador: Un País Megadiverso</h4>
+              <p>
+                Explora la increíble biodiversidad ecuatoriana en este recorrido
+                visual.
+              </p>
+            </div>
+          </div>
+          <div class="video-container">
+            <video controls poster="videos/galapgos.mp4">
+              <source src="videos/galapgos.mp4" type="video/mp4" />
+              Tu navegador no soporta video.
+            </video>
+            <div class="video-info">
+              <h4>Galápagos: Islas Encantadas</h4>
+              <p>
+                Conoce la fauna única de las Islas Galápagos y su importancia
+                científica.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NUEVA SECCIÓN: FORMULARIO DE CONTACTO -->
+      <section class="contact-section" id="contacto">
+        <h2>Planifica tu Viaje a Ecuador</h2>
+        <p class="intro" style="text-align: center">
+          ¿Listo para vivir la aventura ecuatoriana? Completa el formulario y te
+          ayudaremos a planificar tu viaje perfecto.
+        </p>
+
+        <div class="contact-form">
+          <form action="procesar_formulario.php" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre Completo *</label>
+                <input type="text" id="nombre" name="nombre" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Correo Electrónico *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" />
+              </div>
+
+              <div class="form-group">
+                <label for="pais">País de Origen *</label>
+                <input type="text" id="pais" name="pais" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="region">Región de Interés *</label>
+                <select id="region" name="region" required>
+                  <option value="">Selecciona una región</option>
+                  <option value="costa">Costa</option>
+                  <option value="sierra">Sierra</option>
+                  <option value="amazonia">Amazonía</option>
+                  <option value="galapagos">Galápagos</option>
+                  <option value="todas">Todas las regiones</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="presupuesto">Presupuesto Aproximado (USD)</label>
+                <select id="presupuesto" name="presupuesto">
+                  <option value="">Selecciona un rango</option>
+                  <option value="500-1000">$500 - $1,000</option>
+                  <option value="1000-2500">$1,000 - $2,500</option>
+                  <option value="2500-5000">$2,500 - $5,000</option>
+                  <option value="5000+">Más de $5,000</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fecha_viaje">Fecha Estimada de Viaje</label>
+                <input type="date" id="fecha_viaje" name="fecha_viaje" />
+              </div>
+
+              <div class="form-group">
+                <label for="duracion">Duración del Viaje (días)</label>
+                <input
+                  type="number"
+                  id="duracion"
+                  name="duracion"
+                  min="1"
+                  max="365"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="personas">Número de Personas *</label>
+              <input
+                type="number"
+                id="personas"
+                name="personas"
+                min="1"
+                max="50"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Tipo de Turismo *</label>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 0.8rem;
+                  margin-top: 0.5rem;
+                "
+              >
+                <label
+                  style="display: flex; align-items: center; cursor: pointer"
+                >
+                  <input
+                    type="radio"
+                    name="tipo_turismo"
+                    value="natural"
+                    required
+                    style="width: auto; margin-right: 0.8rem"
+                  />
+                  <span>🌿 Natural - Ecoturismo y vida silvestre</span>
+                </label>
+                <label
+                  style="display: flex; align-items: center; cursor: pointer"
+                >
+                  <input
+                    type="radio"
+                    name="tipo_turismo"
+                    value="cultural"
+                    style="width: auto; margin-right: 0.8rem"
+                  />
+                  <span>🏛️ Cultural - Historia y tradiciones</span>
+                </label>
+                <label
+                  style="display: flex; align-items: center; cursor: pointer"
+                >
+                  <input
+                    type="radio"
+                    name="tipo_turismo"
+                    value="aventura"
+                    style="width: auto; margin-right: 0.8rem"
+                  />
+                  <span>🏔️ Aventura - Deportes extremos y trekking</span>
+                </label>
+                <label
+                  style="display: flex; align-items: center; cursor: pointer"
+                >
+                  <input
+                    type="radio"
+                    name="tipo_turismo"
+                    value="gastronomico"
+                    style="width: auto; margin-right: 0.8rem"
+                  />
+                  <span>🍽️ Gastronómico - Sabores auténticos</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Actividades de Interés</label>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                  gap: 0.8rem;
+                  margin-top: 0.5rem;
+                "
+              >
+                <label
+                  style="display: flex; align-items: center; cursor: pointer"
+                >
+                  <input
+                    type="checkbox"
+                    name="actividades[]"
+                    value="senderismo"
+                    style="width: auto; margin-right: 0.8rem"
+                  />
+                  <span>🥾 Senderismo y trekking</span>
+                </label>
+                <label
+                  style="display: flex; align-items: center; cursor: pointer"
+                >
+                  <input
+                    type="checkbox"
+                    name="actividades[]"
+                    value="buceo"
+                    style="width: auto; margin-right: 0.8rem"
+                  />
+                  <span>🤿 Buceo y snorkel</span>
+                </label>
+                <label
+                  style="display: flex; align-items: center; cursor: pointer"
+                >
+                  <input
+                    type="checkbox"
+                    name="actividades[]"
+                    value="observacion"
+                    style="width: auto; margin-right: 0.8rem"
+                  />
+                  <span>🦜 Observación de fauna</span>
+                </label>
+                <label
+                  style="display: flex; align-items: center; cursor: pointer"
+                >
+                  <input
+                    type="checkbox"
+                    name="actividades[]"
+                    value="volcan"
+                    style="width: auto; margin-right: 0.8rem"
+                  />
+                  <span>🌋 Visita a volcanes</span>
+                </label>
+                <label
+                  style="display: flex; align-items: center; cursor: pointer"
+                >
+                  <input
+                    type="checkbox"
+                    name="actividades[]"
+                    value="playa"
+                    style="width: auto; margin-right: 0.8rem"
+                  />
+                  <span>🏖️ Playas y surf</span>
+                </label>
+                <label
+                  style="display: flex; align-items: center; cursor: pointer"
+                >
+                  <input
+                    type="checkbox"
+                    name="actividades[]"
+                    value="gastronomia"
+                    style="width: auto; margin-right: 0.8rem"
+                  />
+                  <span>🍴 Tours gastronómicos</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje">Cuéntanos sobre tu viaje ideal *</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                required
+                placeholder="Describe qué actividades te interesan, tus expectativas, necesidades especiales, etc."
+              ></textarea>
+            </div>
+
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+                margin-top: 1rem;
+              "
+            >
+              <button type="reset" class="reset-btn">🗑️ Borrar Todo</button>
+              <button type="submit" class="submit-btn">
+                🚀 Enviar Solicitud
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER ÉPICO 2025 -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Sobre Ecuador</h3>
+          <ul>
+            <li><a href="#">Historia</a></li>
+            <li><a href="#">Cultura</a></li>
+            <li><a href="#">Gastronomía</a></li>
+            <li><a href="#">Tradiciones</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Planifica tu Viaje</h3>
+          <ul>
+            <li><a href="#">Cómo llegar</a></li>
+            <li><a href="#">Mejor época</a></li>
+            <li><a href="#">Requisitos de visa</a></li>
+            <li><a href="#">Alojamiento</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Regiones</h3>
+          <ul>
+            <li><a href="#">Costa</a></li>
+            <li><a href="#">Sierra</a></li>
+            <li><a href="#">Amazonía</a></li>
+            <li><a href="#">Galápagos</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contacto</h3>
+          <ul>
+            <li>info@ecuadorturistico.ec</li>
+            <li>+593 99 123 4567</li>
+            <li>Quito • Ecuador</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Ecuador Turístico • El país que lo tiene TODO</p>
+        <p>Hecho con 🇪🇨 amor 🇪🇨 para el mundo</p>
+      </div>
+    </footer>
+  </body>
+</html>
