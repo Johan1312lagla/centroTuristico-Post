@@ -3,354 +3,1177 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Descubre Ecuador - Sitios Turísticos</title>
+    <title>Ecuador Turístico - El País de los 4 Mundos</title>
 
-    <!-- Bootstrap 5.3.8 CSS (exacto como tú lo tenías) -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
-  <body class="bg-light">
-
-    <!-- HEADER / NAVBAR -->
-    <header class="bg-primary text-white shadow">
-      <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-between py-3">
-          <div class="d-flex align-items-center">
-            <span class="fs-2 me-3"></span>
-            <h1 class="h3 mb-0 fw-bold">ECUADOR TURÍSTICO</h1>
+  <body class="bg-dark text-light">
+    <nav
+      class="navbar navbar-expand-lg bg-dark navbar-dark shadow-lg sticky-top p-0"
+      data-aos="fade-down"
+      data-aos-duration="1000"
+    >
+      <div class="container py-3">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <div
+            class="bg-white rounded-3 p-2 shadow-sm me-3 d-flex align-items-center justify-content-center"
+            style="height: 55px; min-width: 80px"
+          >
+            <img
+              src="imagenes/vida.png"
+              alt="Logo"
+              style="max-height: 100%; max-width: 100%"
+            />
           </div>
-          <nav>
-            <ul class="nav gap-4">
-              <li class="nav-item"><a href="#inicio" class="nav-link text-white fw-semibold">Inicio</a></li>
-              <li class="nav-item"><a href="#destinos" class="nav-link text-white fw-semibold">Destinos</a></li>
-              <li class="nav-item"><a href="#videos" class="nav-link text-white fw-semibold">Videos</a></li>
-              <li class="nav-item"><a href="#estadisticas" class="nav-link text-white fw-semibold">Estadísticas</a></li>
-              <li class="nav-item"><a href="#contacto" class="nav-link text-white fw-semibold">Contacto</a></li>
-            </ul>
-          </nav>
+          <span class="fw-bold fs-3 text-white tracking-wide"
+            >ECUADOR TURÍSTICO</span
+          >
+        </a>
+
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto gap-2 align-items-center">
+            <li class="nav-item">
+              <a
+                class="nav-link text-white fw-semibold px-3 py-2 nav-box-link"
+                href="#inicio"
+                >Inicio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-white fw-semibold px-3 py-2 nav-box-link"
+                href="#destinos"
+                >Destinos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-white fw-semibold px-3 py-2 nav-box-link"
+                href="#videos"
+                >Videos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-white fw-semibold px-3 py-2 nav-box-link"
+                href="#estadisticas"
+                >Estadísticas</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-white fw-semibold px-3 py-2 nav-box-link"
+                href="#contacto"
+                >Contacto</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
-    </header>
 
-    <!-- HERO CON IMAGEN DE FONDO -->
-    <section class="hero text-white text-center position-relative overflow-hidden" id="inicio">
-      <div class="position-absolute top-0 start-0 w-100 h-100" 
-           style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
-                  url('imagenes/hero-ecuador.jpg') center/cover no-repeat; z-index: 1;"></div>
-      <div class="container py-5 position-relative" style="z-index: 2;">
-        <div class="py-5 my-5">
-          <h1 class="display-3 fw-bold mb-4">Ecuador, brilla auténticamente</h1>
-          <p class="lead fs-3">Descubre la magia de un país ubicado en el corazón del mundo</p>
+      <div
+        class="d-flex w-100 position-absolute bottom-0 start-0"
+        style="height: 4px"
+      >
+        <div class="flex-fill bg-warning"></div>
+        <div class="flex-fill bg-primary"></div>
+        <div class="flex-fill bg-danger"></div>
+      </div>
+    </nav>
+
+    <section
+      id="inicio"
+      class="position-relative text-white text-center min-vh-100 d-flex align-items-center justify-content-center overflow-hidden"
+    >
+      <img
+        src="imagenes/heroReal.png"
+        class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+        alt="Ecuador"
+      />
+      <div
+        class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75"
+      ></div>
+
+      <div
+        class="container position-relative"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+      >
+        <h1 class="display-1 fw-bold mb-4">Ecuador, brilla auténticamente</h1>
+        <p class="lead fs-1 mb-5">Cuatro mundos. Un solo país.</p>
+        <a
+          href="#destinos"
+          class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill shadow-lg"
+        >
+          Explora Ahora
+        </a>
+      </div>
+    </section>
+
+    <section class="py-5 bg-black">
+      <div class="container py-4">
+        <div class="text-center mb-5" data-aos="fade-down">
+          <h2 class="display-4 fw-bold text-white mb-3">
+            Bienvenido al <span class="text-success">Centro del Mundo</span>
+          </h2>
+
+          <div class="d-flex justify-content-center gap-0 mt-3">
+            <div class="bg-warning px-5 py-1 rounded-start"></div>
+            <div class="bg-primary px-5 py-1"></div>
+            <div class="bg-danger px-5 py-1 rounded-end"></div>
+          </div>
+        </div>
+
+        <div class="row g-5">
+          <div class="col-lg-7" data-aos="fade-right">
+            <div class="mb-5">
+              <p class="fs-5 text-white lh-base">
+                <span class="fw-bold text-warning fs-4">Ecuador</span> no es
+                solo un punto en el mapa; es el escenario donde la naturaleza
+                decidió romper todas las reglas. Situado en el corazón del
+                planeta, somos un concentrado de vida pura donde la aventura no
+                tiene límites.
+              </p>
+              <p class="fs-5 text-light opacity-75 lh-base">
+                Aquí no vienes a ver paisajes, vienes a sentirlos. Prepárate
+                para descubrir un territorio mágico, diseñado para sorprenderte
+                y dividido en
+                <strong class="text-white border-bottom border-warning border-2"
+                  >cuatro regiones inigualables.</strong
+                >
+              </p>
+            </div>
+
+            <div
+              class="card bg-dark border border-secondary border-opacity-50 rounded-4 shadow"
+            >
+              <div class="card-body p-4">
+                <h4
+                  class="text-white fw-bold mb-4 border-bottom border-secondary border-opacity-25 pb-3"
+                >
+                  <i class="bi bi-star-fill text-warning me-2"></i> ¿Por qué
+                  elegirnos?
+                </h4>
+
+                <div class="d-flex flex-column gap-4">
+                  <div class="d-flex align-items-start">
+                    <div class="me-3 mt-1">
+                      <i class="bi bi-award-fill text-primary fs-3"></i>
+                    </div>
+                    <div>
+                      <h5 class="fw-bold text-white mb-1">
+                        Primer Patrimonio Mundial
+                      </h5>
+                      <p class="mb-0 text-light opacity-75 fs-6">
+                        Quito y Galápagos (UNESCO 1978).
+                      </p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-start">
+                    <div class="me-3 mt-1">
+                      <i class="bi bi-wallet2 text-success fs-3"></i>
+                    </div>
+                    <div>
+                      <h5 class="fw-bold text-white mb-1">
+                        Facilidad de Viaje
+                      </h5>
+                      <p class="mb-0 text-light opacity-75 fs-6">
+                        Economía dolarizada y fácil acceso.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-start">
+                    <div class="me-3 mt-1">
+                      <i class="bi bi-flower1 text-danger fs-3"></i>
+                    </div>
+                    <div>
+                      <h5 class="fw-bold text-white mb-1">Cuna del Cacao</h5>
+                      <p class="mb-0 text-light opacity-75 fs-6">
+                        El origen del mejor chocolate está aquí.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5" data-aos="fade-left">
+            <div
+              class="card bg-dark border border-success border-opacity-25 rounded-4 shadow-lg h-100 text-center position-relative overflow-hidden"
+            >
+              <div
+                class="position-absolute top-0 start-0 w-100 bg-success opacity-10 pt-2"
+              ></div>
+
+              <div
+                class="card-body p-5 d-flex flex-column justify-content-center align-items-center"
+              >
+                <div
+                  class="mb-4 p-4 rounded-circle bg-success bg-opacity-10 border border-success border-opacity-25 shadow"
+                >
+                  <i class="bi bi-globe-americas display-3 text-success"></i>
+                </div>
+
+                <h3 class="text-white fw-bold mb-3 display-6">
+                  El Punto Más Alto
+                </h3>
+
+                <p class="text-white fs-5 mb-4 px-2">
+                  ¿Sabías que el volcán
+                  <strong class="text-warning">Chimborazo</strong> es el punto
+                  más cercano al Sol?
+                </p>
+
+                <div
+                  class="bg-black bg-opacity-25 p-4 rounded-3 border border-secondary border-opacity-25 mb-5"
+                >
+                  <p class="text-light mb-0 fst-italic fs-6">
+                    "Su cumbre está más lejos del centro de la Tierra que el
+                    Everest."
+                  </p>
+                </div>
+
+                <a
+                  href="#destinos"
+                  class="btn btn-outline-light rounded-pill px-5 py-3 fw-bold shadow hover-scale fs-6"
+                >
+                  Ver Destinos
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <main class="container my-5">
+    <main class="container py-5">
+      <section class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 my-5">
+        <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="card h-100 bg-dark border-secondary rounded-4 overflow-hidden shadow zoom-card"
+          >
+            <div class="overflow-hidden">
+              <img
+                src="imagenes/costa.jpg"
+                class="card-img-top object-fit-cover transition-img"
+                alt="Costa"
+                style="height: 250px"
+              />
+            </div>
+            <div class="card-body text-center p-4">
+              <h3 class="text-white fw-bold">Playa Costa</h3>
+              <p class="text-secondary mb-0">
+                Playas paradisíacas y ceviche brutal.
+              </p>
+            </div>
+          </div>
+        </div>
 
-      <!-- BIENVENIDA -->
-      <section class="text-center mb-5">
-        <h2 class="display-5 fw-bold mb-4">Bienvenido a Ecuador</h2>
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <p class="lead mb-4">
-              Ecuador está ubicado en el corazón del planeta, justo en la mitad del mundo, un lugar mágico donde el sol brilla 12 horas exactas todo el año y la naturaleza nunca duerme. En tan solo 283.000 km² conviven cuatro mundos irrepetibles: la Costa con playas infinitas y ballenas que saludan desde el Pacífico, la Sierra andina con volcanes nevados y ciudades coloniales que parecen sacadas de un cuento, la Amazonía donde cada árbol guarda más vida que toda Europa junta, y las Islas Galápagos, el laboratorio vivo de Darwin donde las tortugas gigantes y los piqueros de patas azules te reciben como en casa. Aquí puedes desayunar viendo el mar, almorzar a 4.000 metros de altura y cenar con pingüinos… ¡todo en el mismo día! Ecuador no es un destino, es una experiencia que te cambia para siempre.
-            </p>
-            <p class="lead">
-              Cuatro regiones naturales te esperan en menos de 280.000 km²: la Costa con playas de arena blanca y ballenas que saltan a dos metros de tu bote, la Sierra donde los volcanes nevados como el Chimborazo tocan el cielo a casi 6.300 metros, la Amazonía que guarda el 10 % de toda la biodiversidad del planeta y las Islas Galápagos, el único lugar del mundo donde puedes nadar con pingüinos por la mañana y caminar entre tortugas centenarias por la tarde. Aquí no necesitas cambiar de país para cambiar de mundo: en un solo día puedes desayunar con ceviche frente al Pacífico, almorzar chocolate caliente a 4.000 m de altura y terminar la noche viendo estrellas sobre un desierto de lava. ¡Ecuador es el país donde el tiempo se detiene y la aventura nunca termina!
-            </p>
+        <div class="col" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="card h-100 bg-dark border-secondary rounded-4 overflow-hidden shadow zoom-card"
+          >
+            <div class="overflow-hidden">
+              <img
+                src="imagenes/sierra.jpg"
+                class="card-img-top object-fit-cover transition-img"
+                alt="Sierra"
+                style="height: 250px"
+              />
+            </div>
+            <div class="card-body text-center p-4">
+              <h3 class="text-white fw-bold">Montaña Sierra</h3>
+              <p class="text-secondary mb-0">
+                Volcanes activos y ciudades coloniales.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col" data-aos="fade-up" data-aos-delay="300">
+          <div
+            class="card h-100 bg-dark border-secondary rounded-4 overflow-hidden shadow zoom-card"
+          >
+            <div class="overflow-hidden">
+              <img
+                src="imagenes/amazonia.jpg"
+                class="card-img-top object-fit-cover transition-img"
+                alt="Amazonía"
+                style="height: 250px"
+              />
+            </div>
+            <div class="card-body text-center p-4">
+              <h3 class="text-white fw-bold">Selva Amazonía</h3>
+              <p class="text-secondary mb-0">
+                Selva viva con más animales que en Netflix.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col" data-aos="fade-up" data-aos-delay="400">
+          <div
+            class="card h-100 bg-dark border-secondary rounded-4 overflow-hidden shadow zoom-card"
+          >
+            <div class="overflow-hidden">
+              <img
+                src="imagenes/galapagos.jpg"
+                class="card-img-top object-fit-cover transition-img"
+                alt="Galápagos"
+                style="height: 250px"
+              />
+            </div>
+            <div class="card-body text-center p-4">
+              <h3 class="text-white fw-bold">Galápagos</h3>
+              <p class="text-secondary mb-0">
+                Donde las tortugas son influencers.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- REGIONES -->
-      <section class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5">
-        <div class="col">
-          <div class="card h-100 border-0 shadow-sm">
-            <img src="imagenes/costa.jpg" class="card-img-top" alt="Costa">
-            <div class="card-body text-center">
-              <h3 class="card-title fs-4">Playa Costa</h3>
-              <p class="card-text">Playas paradisíacas y ceviche brutal</p>
+      <section id="destinos" class="container my-5 py-5">
+        <div class="row mb-5 align-items-end" data-aos="fade-up">
+          <div class="col-md-8">
+            <h2 class="display-5 fw-bold text-white mb-0">Destinos Selectos</h2>
+            <div class="d-flex mt-3" style="width: 100px; height: 4px">
+              <div class="flex-fill bg-warning"></div>
+              <div class="flex-fill bg-primary"></div>
+              <div class="flex-fill bg-danger"></div>
             </div>
           </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 border-0 shadow-sm">
-            <img src="imagenes/sierra.jpg" class="card-img-top" alt="Sierra">
-            <div class="card-body text-center">
-              <h3 class="card-title fs-4">Montaña Sierra</h3>
-              <p class="card-text">Volcanes activos y ciudades coloniales</p>
-            </div>
+          <div class="col-md-4 text-md-end mt-3 mt-md-0">
+            <p class="text-secondary mb-0">Explora los colores de Ecuador</p>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100 border-0 shadow-sm">
-            <img src="imagenes/amazonia.jpg" class="card-img-top" alt="Amazonía">
-            <div class="card-body text-center">
-              <h3 class="card-title fs-4">Selva Amazonía</h3>
-              <p class="card-text">Selva viva con más animales que en Netflix</p>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col" data-aos="fade-up" data-aos-delay="0">
+            <div
+              class="card h-100 bg-transparent border border-warning rounded-3 p-3 shadow-sm"
+            >
+              <div class="card-body d-flex align-items-center">
+                <i class="bi bi-buildings text-warning fs-2 me-3"></i>
+                <div>
+                  <h5 class="card-title text-white fw-bold mb-1">Quito</h5>
+                  <p class="card-text text-secondary small">
+                    Capital del Centro del Mundo
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 border-0 shadow-sm">
-            <img src="imagenes/galapagos.jpg" class="card-img-top" alt="Galápagos">
-            <div class="card-body text-center">
-              <h3 class="card-title fs-4">Tortuga Galápagos</h3>
-              <p class="card-text">Donde las tortugas son influencers</p>
+
+          <div class="col" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="card h-100 bg-transparent border border-primary rounded-3 p-3 shadow-sm"
+            >
+              <div class="card-body d-flex align-items-center">
+                <i class="bi bi-water text-primary fs-2 me-3"></i>
+                <div>
+                  <h5 class="card-title text-white fw-bold mb-1">Galápagos</h5>
+                  <p class="card-text text-secondary small">
+                    Laboratorio natural viviente
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="card h-100 bg-transparent border border-danger rounded-3 p-3 shadow-sm"
+            >
+              <div class="card-body d-flex align-items-center">
+                <i class="bi bi-droplet text-danger fs-2 me-3"></i>
+                <div>
+                  <h5 class="card-title text-white fw-bold mb-1">Baños</h5>
+                  <p class="card-text text-secondary small">
+                    Aventura y descanso
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-aos="fade-up" data-aos-delay="0">
+            <div
+              class="card h-100 bg-transparent border border-warning rounded-3 p-3 shadow-sm"
+            >
+              <div class="card-body d-flex align-items-center">
+                <i class="bi bi-brightness-high text-warning fs-2 me-3"></i>
+                <div>
+                  <h5 class="card-title text-white fw-bold mb-1">Montañita</h5>
+                  <p class="card-text text-secondary small">
+                    Surf internacional
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="card h-100 bg-transparent border border-primary rounded-3 p-3 shadow-sm"
+            >
+              <div class="card-body d-flex align-items-center">
+                <i class="bi bi-cone-striped text-primary fs-2 me-3"></i>
+                <div>
+                  <h5 class="card-title text-white fw-bold mb-1">Cotopaxi</h5>
+                  <p class="card-text text-secondary small">
+                    Volcán activo majestuoso
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="card h-100 bg-transparent border border-danger rounded-3 p-3 shadow-sm"
+            >
+              <div class="card-body d-flex align-items-center">
+                <i class="bi bi-eye text-danger fs-2 me-3"></i>
+                <div>
+                  <h5 class="card-title text-white fw-bold mb-1">Quilotoa</h5>
+                  <p class="card-text text-secondary small">Cráter y laguna</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-aos="fade-up" data-aos-delay="0">
+            <div
+              class="card h-100 bg-transparent border border-warning rounded-3 p-3 shadow-sm"
+            >
+              <div class="card-body d-flex align-items-center">
+                <i class="bi bi-columns text-warning fs-2 me-3"></i>
+                <div>
+                  <h5 class="card-title text-white fw-bold mb-1">Cuenca</h5>
+                  <p class="card-text text-secondary small">Joyas coloniales</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="card h-100 bg-transparent border border-primary rounded-3 p-3 shadow-sm"
+            >
+              <div class="card-body d-flex align-items-center">
+                <i class="bi bi-shop-window text-primary fs-2 me-3"></i>
+                <div>
+                  <h5 class="card-title text-white fw-bold mb-1">Guayaquil</h5>
+                  <p class="card-text text-secondary small">Puerto principal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="card h-100 bg-transparent border border-danger rounded-3 p-3 shadow-sm"
+            >
+              <div class="card-body d-flex align-items-center">
+                <i class="bi bi-basket text-danger fs-2 me-3"></i>
+                <div>
+                  <h5 class="card-title text-white fw-bold mb-1">Otavalo</h5>
+                  <p class="card-text text-secondary small">
+                    Tradición y comercio
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-aos="fade-up" data-aos-delay="0">
+            <div
+              class="card h-100 bg-transparent border border-warning rounded-3 p-3 shadow-sm"
+            >
+              <div class="card-body d-flex align-items-center">
+                <i class="bi bi-feather text-warning fs-2 me-3"></i>
+                <div>
+                  <h5 class="card-title text-white fw-bold mb-1">Mindo</h5>
+                  <p class="card-text text-secondary small">
+                    Santuario de aves
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="card h-100 bg-transparent border border-primary rounded-3 p-3 shadow-sm"
+            >
+              <div class="card-body d-flex align-items-center">
+                <i class="bi bi-compass text-primary fs-2 me-3"></i>
+                <div>
+                  <h5 class="card-title text-white fw-bold mb-1">Pto. Ayora</h5>
+                  <p class="card-text text-secondary small">
+                    Base de exploración
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="card h-100 bg-transparent border border-danger rounded-3 p-3 shadow-sm"
+            >
+              <div class="card-body d-flex align-items-center">
+                <i class="bi bi-tree text-danger fs-2 me-3"></i>
+                <div>
+                  <h5 class="card-title text-white fw-bold mb-1">Yasuní</h5>
+                  <p class="card-text text-secondary small">Pulmón del mundo</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- DESTINOS IMPERDIBLES -->
-      <section id="destinos" class="my-5 text-center">
-        <h2 class="display-5 fw-bold mb-4">Destinos Imperdibles</h2>
-        <h3 class="mb-4">Los 12 lugares que TIENES que visitar:</h3>
-        <ul class="list-unstyled d-inline-block text-start fs-5">
-          <li><strong>Quito</strong> - Capital más alta del mundo</li>
-          <li><strong>Galápagos</strong> - Paraíso de Darwin</li>
-          <li><strong>Baños</strong> - Columpio del fin del mundo</li>
-          <li><strong>Montañita</strong> - Surf y fiesta 24/7</li>
-          <li><strong>Cotopaxi</strong> - Volcán perfecto</li>
-          <li><strong>Quilotoa</strong> - Laguna esmeralda</li>
-          <li><strong>Cuenca</strong> - La más bonita</li>
-          <li><strong>Guayaquil</strong> - Malecón 2000</li>
-        </ul>
-      </section>
-
-      <!-- ESTADÍSTICAS -->
-      <section class="bg-white rounded shadow py-5 my-5 text-center" id="estadisticas">
-        <h2 class="display-5 fw-bold mb-5">Ecuador en Números</h2>
-        <div class="row row-cols-2 row-cols-md-4 g-4">
-          <div class="col">
-            <h3 class="display-3 fw-bold text-primary">4</h3>
-            <p class="fs-5">Regiones</p>
+      <section id="estadisticas" class="py-5 my-5">
+        <h2
+          class="text-center display-4 fw-bold text-white mb-5"
+          data-aos="fade-down"
+        >
+          Ecuador en Números
+        </h2>
+        <div class="row row-cols-2 row-cols-md-4 g-4 justify-content-center">
+          <div class="col" data-aos="zoom-in" data-aos-duration="1000">
+            <div
+              class="bg-danger text-white p-4 rounded-4 text-center shadow-lg h-100 d-flex flex-column justify-content-center"
+            >
+              <h3 class="display-4 fw-bold mb-0">4</h3>
+              <p class="fs-5">Regiones</p>
+            </div>
           </div>
-          <div class="col">
-            <h3 class="display-3 fw-bold text-primary">2.7M</h3>
-            <p class="fs-5">Turistas/año</p>
+          <div class="col" data-aos="zoom-in" data-aos-duration="1200">
+            <div
+              class="bg-info text-white p-4 rounded-4 text-center shadow-lg h-100 d-flex flex-column justify-content-center"
+            >
+              <h3 class="display-4 fw-bold mb-0">2.7M</h3>
+              <p class="fs-5">Turistas</p>
+            </div>
           </div>
-          <div class="col">
-            <h3 class="display-3 fw-bold text-primary">10%</h3>
-            <p class="fs-5">Biodiversidad Mundial</p>
+          <div class="col" data-aos="zoom-in" data-aos-duration="1400">
+            <div
+              class="bg-primary text-white p-4 rounded-4 text-center shadow-lg h-100 d-flex flex-column justify-content-center"
+            >
+              <h3 class="display-4 fw-bold mb-0">100%</h3>
+              <p class="fs-5">Biodiversidad</p>
+            </div>
           </div>
-          <div class="col">
-            <h3 class="display-3 fw-bold text-primary">24</h3>
-            <p class="fs-5">Provincias</p>
+          <div class="col" data-aos="zoom-in" data-aos-duration="1600">
+            <div
+              class="bg-success text-white p-4 rounded-4 text-center shadow-lg h-100 d-flex flex-column justify-content-center"
+            >
+              <h3 class="display-4 fw-bold mb-0">24</h3>
+              <p class="fs-5">Provincias</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- VIDEOS -->
       <section id="videos" class="my-5">
-        <h2 class="text-center display-5 fw-bold mb-5">Descubre Ecuador en Video</h2>
-        <div class="row row-cols-1 row-cols-lg-2 g-5">
-          <div class="col">
-            <video class="w-100 rounded shadow" controls poster="videos/ecuador.jpg">
-              <source src="videos/ecuador.mp4" type="video/mp4">
-              Tu navegador no soporta video.
-            </video>
-            <div class="mt-3">
-              <h4>Ecuador: Un País Megadiverso</h4>
-              <p>Explora la increíble biodiversidad ecuatoriana en este recorrido visual.</p>
+        <h2
+          class="text-center display-4 fw-bold text-success mb-5"
+          data-aos="fade-up"
+        >
+          Vive Ecuador en Video
+        </h2>
+        <div class="row g-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div
+              class="ratio ratio-16x9 rounded-4 shadow-lg overflow-hidden border border-secondary"
+            >
+              <video controls class="rounded-4" preload="metadata">
+                <source src="videos/Ecuadormio.mp4#t=0.3" type="video/mp4" />
+                Tu navegador no soporta videos.
+              </video>
             </div>
+            <h4 class="text-center mt-3 text-white fw-bold">
+              Ecuador Megadiverso
+            </h4>
           </div>
-          <div class="col">
-            <video class="w-100 rounded shadow" controls poster="videos/galapgos.mp4">
-              <source src="videos/galapgos.mp4" type="video/mp4">
-              Tu navegador no soporta video.
-            </video>
-            <div class="mt-3">
-              <h4>Galápagos: Islas Encantadas</h4>
-              <p>Conoce la fauna única de las Islas Galápagos y su importancia científica.</p>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <div
+              class="ratio ratio-16x9 rounded-4 shadow-lg overflow-hidden border border-secondary"
+            >
+              <video controls class="rounded-4" preload="metadata">
+                <source src="videos/Galapagos.mp4#t=0.1" type="video/mp4" />
+                Tu navegador no soporta videos.
+              </video>
             </div>
+            <h4 class="text-center mt-3 text-white fw-bold">
+              Galápagos Encantadas
+            </h4>
           </div>
         </div>
       </section>
-
-      <!-- FORMULARIO DE CONTACTO -->
-      <section class="bg-white rounded shadow p-5 my-5" id="contacto">
-        <h2 class="text-center display-5 fw-bold mb-4">Planifica tu Viaje a Ecuador</h2>
-        <p class="text-center lead mb-5">
-          ¿Listo para vivir la aventura ecuatoriana? Completa el formulario y te ayudaremos a planificar tu viaje perfecto.
-        </p>
-
-        <form action="procesar_formulario.php" method="POST" class="row g-4">
-          <div class="col-md-6">
-            <label for="nombre" class="form-label">Nombre Completo *</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" required>
-          </div>
-          <div class="col-md-6">
-            <label for="email" class="form-label">Correo Electrónico *</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+      <section class="container my-5" id="contacto" data-aos="fade-up">
+        <div
+          class="card bg-dark border-secondary shadow-lg rounded-4 overflow-hidden"
+          data-bs-theme="dark"
+        >
+          <div class="d-flex w-100">
+            <div class="flex-fill bg-warning p-1"></div>
+            <div class="flex-fill bg-primary p-1"></div>
+            <div class="flex-fill bg-danger p-1"></div>
           </div>
 
-          <div class="col-md-6">
-            <label for="telefono" class="form-label">Teléfono</label>
-            <input type="tel" class="form-control" id="telefono" name="telefono">
-          </div>
-          <div class="col-md-6">
-            <label for="pais" class="form-label">País de Origen *</label>
-            <input type="text" class="form-control" id="pais" name="pais" required>
-          </div>
+          <div class="card-body p-4 p-md-5">
+            <h2 class="display-6 fw-bold text-white mb-4">
+              Planifica tu Viaje a Ecuador
+            </h2>
 
-          <div class="col-md-6">
-            <label for="region" class="form-label">Región de Interés *</label>
-            <select class="form-select" id="region" name="region" required>
-              <option value="">Selecciona una región</option>
-              <option value="costa">Costa</option>
-              <option value="sierra">Sierra</option>
-              <option value="amazonia">Amazonía</option>
-              <option value="galapagos">Galápagos</option>
-              <option value="todas">Todas las regiones</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label for="presupuesto" class="form-label">Presupuesto Aproximado (USD)</label>
-            <select class="form-select" id="presupuesto" name="presupuesto">
-              <option value="">Selecciona un rango</option>
-              <option value="500-1000">$500 - $1,000</option>
-              <option value="1000-2500">$1,000 - $2,500</option>
-              <option value="2500-5000">$2,500 - $5,000</option>
-              <option value="5000+">Más de $5,000</option>
-            </select>
-          </div>
-
-          <div class="col-md-6">
-            <label for="fecha_viaje" class="form-label">Fecha Estimada de Viaje</label>
-            <input type="date" class="form-control" id="fecha_viaje" name="fecha_viaje">
-          </div>
-          <div class="col-md-6">
-            <label for="duracion" class="form-label">Duración del Viaje (días)</label>
-            <input type="number" class="form-control" id="duracion" name="duracion" min="1" max="365">
-          </div>
-
-          <div class="col-12">
-            <label for="personas" class="form-label">Número de Personas *</label>
-            <input type="number" class="form-control" id="personas" name="personas" min="1" max="50" required>
-          </div>
-
-          <div class="col-12">
-            <label class="form-label">Tipo de Turismo *</label>
-            <div class="row row-cols-2 row-cols-md-4 g-3">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="tipo_turismo" value="natural" required>
-                <label class="form-check-label">Natural - Ecoturismo y vida silvestre</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="tipo_turismo" value="cultural">
-                <label class="form-check-label">Cultural - Historia y tradiciones</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="tipo_turismo" value="aventura">
-                <label class="form-check-label">Aventura - Deportes extremos y trekking</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="tipo_turismo" value="gastronomico">
-                <label class="form-check-label">Gastronómico - Sabores auténticos</label>
-              </div>
+            <div
+              class="bg-body-tertiary p-3 rounded-3 border border-secondary mb-5"
+            >
+              <p class="mb-0 text-secondary-emphasis small text-center">
+                <i class="bi bi-info-circle me-2 text-info"></i>
+                Completa el formulario. Los campos marcados con * son
+                obligatorios.
+              </p>
             </div>
-          </div>
 
-          <div class="col-12">
-            <label class="form-label">Actividades de Interés</label>
-            <div class="row row-cols-2 row-cols-md-3 g-3">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="actividades[]" value="senderismo">
-                <label class="form-check-label">Senderismo y trekking</label>
+            <form
+              class="row g-4 needs-validation"
+              novalidate
+              action="procesar_formulario.php"
+              method="POST"
+            >
+              <div class="col-md-6">
+                <label for="nombre" class="form-label text-info fw-bold small"
+                  >Nombre Completo *</label
+                >
+                <div class="input-group">
+                  <span class="input-group-text border-secondary"
+                    ><i class="bi bi-person-fill"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control border-secondary focus-ring focus-ring-info"
+                    id="nombre"
+                    name="nombre"
+                    required
+                    placeholder="Ej: Juan Pérez"
+                  />
+                </div>
               </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="actividades[]" value="buceo">
-                <label class="form-check-label">Buceo y snorkel</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="actividades[]" value="observacion">
-                <label class="form-check-label">Observación de fauna</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="actividades[]" value="volcan">
-                <label class="form-check-label">Visita a volcanes</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="actividades[]" value="playa">
-                <label class="form-check-label">Playas y surf</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="actividades[]" value="gastronomia">
-                <label class="form-check-label">Tours gastronómicos</label>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-12">
-            <label for="mensaje" class="form-label">Cuéntanos sobre tu viaje ideal *</label>
-            <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required placeholder="Describe qué actividades te interesan, tus expectativas, necesidades especiales, etc."></textarea>
-          </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label text-info fw-bold small"
+                  >Correo Electrónico *</label
+                >
+                <div class="input-group">
+                  <span class="input-group-text border-secondary"
+                    ><i class="bi bi-envelope-fill"></i
+                  ></span>
+                  <input
+                    type="email"
+                    class="form-control border-secondary"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="ejemplo@correo.com"
+                  />
+                </div>
+              </div>
 
-          <div class="col-12 text-center mt-4">
-            <button type="reset" class="btn btn-outline-danger btn-lg me-4">Borrar Todo</button>
-            <button type="submit" class="btn btn-success btn-lg">Enviar Solicitud</button>
+              <div class="col-md-6">
+                <label for="telefono" class="form-label text-info fw-bold small"
+                  >Teléfono</label
+                >
+                <div class="input-group">
+                  <span class="input-group-text border-secondary"
+                    ><i class="bi bi-telephone-fill"></i
+                  ></span>
+                  <input
+                    type="tel"
+                    class="form-control border-secondary"
+                    id="telefono"
+                    name="telefono"
+                    placeholder="+593 99 123 4567"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="pais" class="form-label text-info fw-bold small"
+                  >País de Origen *</label
+                >
+                <div class="input-group">
+                  <span class="input-group-text border-secondary"
+                    ><i class="bi bi-geo-alt-fill"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control border-secondary"
+                    id="pais"
+                    name="pais"
+                    required
+                    placeholder="Ej: España, México, USA"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="region" class="form-label text-info fw-bold small"
+                  >Región de Interés *</label
+                >
+                <select
+                  class="form-select border-secondary"
+                  id="region"
+                  name="region"
+                  required
+                >
+                  <option value="" selected>Selecciona una región...</option>
+                  <option value="costa">Costa</option>
+                  <option value="sierra">Sierra</option>
+                  <option value="amazonia">Amazonía</option>
+                  <option value="galapagos">Galápagos</option>
+                  <option value="todas">Todo el país</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label
+                  for="presupuesto"
+                  class="form-label text-info fw-bold small"
+                  >Presupuesto (USD)</label
+                >
+                <select
+                  class="form-select border-secondary"
+                  id="presupuesto"
+                  name="presupuesto"
+                >
+                  <option value="">Selecciona un rango</option>
+                  <option value="500-1000">$500 - $1,000</option>
+                  <option value="1000-2500">$1,000 - $2,500</option>
+                  <option value="2500-5000">$2,500 - $5,000</option>
+                  <option value="5000+">Más de $5,000</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label
+                  for="fecha_viaje"
+                  class="form-label text-info fw-bold small"
+                  >Fecha Estimada</label
+                >
+                <input
+                  type="date"
+                  class="form-control border-secondary"
+                  id="fecha_viaje"
+                  name="fecha_viaje"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="duracion" class="form-label text-info fw-bold small"
+                  >Duración (días)</label
+                >
+                <input
+                  type="number"
+                  class="form-control border-secondary"
+                  id="duracion"
+                  name="duracion"
+                  min="1"
+                  max="365"
+                  placeholder="Ej: 15"
+                />
+              </div>
+
+              <div class="col-12">
+                <label for="personas" class="form-label text-info fw-bold small"
+                  >Número de Personas *</label
+                >
+                <input
+                  type="number"
+                  class="form-control border-secondary"
+                  id="personas"
+                  name="personas"
+                  min="1"
+                  max="50"
+                  required
+                  placeholder="Ej: 2 adultos, 1 niño"
+                />
+              </div>
+
+              <div class="col-12 mt-4">
+                <label class="form-label text-info fw-bold small mb-3"
+                  >Tipo de Turismo *</label
+                >
+                <div class="d-flex flex-column gap-2 ps-2">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="tipo_turismo"
+                      id="tur1"
+                      value="natural"
+                      required
+                    />
+                    <label class="form-check-label" for="tur1">
+                      <i class="bi bi-tree-fill text-success me-2"></i> Natural
+                      - Ecoturismo y vida silvestre
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="tipo_turismo"
+                      id="tur2"
+                      value="cultural"
+                    />
+                    <label class="form-check-label" for="tur2">
+                      <i class="bi bi-bank2 text-warning me-2"></i> Cultural -
+                      Historia y tradiciones
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="tipo_turismo"
+                      id="tur3"
+                      value="aventura"
+                    />
+                    <label class="form-check-label" for="tur3">
+                      <i class="bi bi-bicycle text-danger me-2"></i> Aventura -
+                      Deportes extremos y trekking
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="tipo_turismo"
+                      id="tur4"
+                      value="gastronomico"
+                    />
+                    <label class="form-check-label" for="tur4">
+                      <i class="bi bi-cup-hot-fill text-info me-2"></i>
+                      Gastronómico - Sabores auténticos
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 mt-4">
+                <label class="form-label text-info fw-bold small mb-3"
+                  >Actividades de Interés</label
+                >
+                <div class="row g-3 ps-2">
+                  <div class="col-md-6">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value="senderismo"
+                        id="act1"
+                        name="actividades[]"
+                      />
+                      <label class="form-check-label" for="act1"
+                        ><i class="bi bi-activity me-1 text-danger"></i>
+                        Senderismo y trekking</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value="buceo"
+                        id="act2"
+                        name="actividades[]"
+                      />
+                      <label class="form-check-label" for="act2"
+                        ><i class="bi bi-water me-1 text-primary"></i> Buceo y
+                        snorkel</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value="fauna"
+                        id="act3"
+                        name="actividades[]"
+                      />
+                      <label class="form-check-label" for="act3"
+                        ><i class="bi bi-camera-fill me-1 text-success"></i>
+                        Observación de fauna</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value="volcanes"
+                        id="act4"
+                        name="actividades[]"
+                      />
+                      <label class="form-check-label" for="act4"
+                        ><i class="bi bi-fire me-1 text-warning"></i> Visita a
+                        volcanes</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 mt-4">
+                <label for="mensaje" class="form-label text-info fw-bold small"
+                  >Cuéntanos sobre tu viaje ideal *</label
+                >
+                <div class="position-relative">
+                  <textarea
+                    class="form-control border-secondary"
+                    id="mensaje"
+                    name="mensaje"
+                    rows="5"
+                    required
+                    placeholder="Ej: Me gustaría visitar las Islas Galápagos y comer encebollado..."
+                  ></textarea>
+                </div>
+              </div>
+
+              <div
+                class="col-12 d-flex justify-content-between align-items-center mt-5"
+              >
+                <button
+                  type="reset"
+                  class="btn btn-outline-light px-4 py-2 rounded-3"
+                >
+                  <i class="bi bi-trash3 me-2"></i> Borrar
+                </button>
+                <button
+                  type="submit"
+                  class="btn btn-success px-5 py-2 rounded-3 shadow fw-bold"
+                >
+                  <i class="bi bi-send-fill me-2"></i> Enviar Solicitud
+                </button>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
       </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-dark text-white py-5 mt-5">
+    <footer class="bg-black text-white pt-5 pb-3 mt-5">
+      <div class="d-flex w-100 mb-5">
+        <div class="flex-fill bg-warning p-1"></div>
+        <div class="flex-fill bg-primary p-1"></div>
+        <div class="flex-fill bg-danger p-1"></div>
+      </div>
+
       <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <h5>Sobre Ecuador</h5>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+          <div class="col mb-4">
+            <h5 class="text-success fw-bold text-uppercase mb-3">
+              Ecuador Turístico
+            </h5>
+            <p class="text-secondary small">
+              Descubre los cuatro mundos en un solo lugar. La mejor guía para tu
+              próxima aventura.
+            </p>
+
+            <div class="mt-4 pt-3 border-top border-secondary">
+              <p class="small text-white-50 mb-0">Desarrollado por:</p>
+              <p class="fw-bold text-white fs-5">Johann Lagla</p>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <h5 class="text-white fw-bold mb-3">Enlaces Rápidos</h5>
             <ul class="list-unstyled">
-              <li><a href="#" class="text-white text-decoration-none">Historia</a></li>
-              <li><a href="#" class="text-white text-decoration-none">Cultura</a></li>
-              <li><a href="#" class="text-white text-decoration-none">Gastronomía</a></li>
-              <li><a href="#" class="text-white text-decoration-none">Tradiciones</a></li>
+              <li class="mb-2">
+                <a href="#inicio" class="text-secondary text-decoration-none"
+                  >Inicio</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#destinos" class="text-secondary text-decoration-none"
+                  >Destinos</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="#videos" class="text-secondary text-decoration-none"
+                  >Galería de Videos</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="#estadisticas"
+                  class="text-secondary text-decoration-none"
+                  >Datos Curiosos</a
+                >
+              </li>
             </ul>
           </div>
-          <div class="col-md-3">
-            <h5>Planifica tu Viaje</h5>
+
+          <div class="col mb-4">
+            <h5 class="text-white fw-bold mb-3">Contacto Directo</h5>
             <ul class="list-unstyled">
-              <li><a href="#" class="text-white text-decoration-none">Cómo llegar</a></li>
-              <li><a href="#" class="text-white text-decoration-none">Mejor época</a></li>
-              <li><a href="#" class="text-white text-decoration-none">Requisitos de visa</a></li>
-              <li><a href="#" class="text-white text-decoration-none">Alojamiento</a></li>
+              <li class="mb-3 d-flex align-items-start">
+                <i class="bi bi-geo-alt-fill text-danger me-2 fs-5 mt-1"></i>
+                <div>
+                  <span class="d-block text-white fw-semibold">Ubicación:</span>
+                  <span class="text-secondary">Latacunga - Cotopaxi</span>
+                </div>
+              </li>
+              <li class="mb-3 d-flex align-items-start">
+                <i class="bi bi-whatsapp text-success me-2 fs-5 mt-1"></i>
+                <div>
+                  <span class="d-block text-white fw-semibold"
+                    >Teléfono / WhatsApp:</span
+                  >
+                  <a
+                    href="https://wa.me/593989167613"
+                    class="text-secondary text-decoration-none"
+                    >0989167613</a
+                  >
+                </div>
+              </li>
             </ul>
           </div>
-          <div class="col-md-3">
-            <h5>Regiones</h5>
-            <ul class="list-unstyled">
-              <li><a href="#" class="text-white text-decoration-none">Costa</a></li>
-              <li><a href="#" class="text-white text-decoration-none">Sierra</a></li>
-              <li><a href="#" class="text-white text-decoration-none">Amazonía</a></li>
-              <li><a href="#" class="text-white text-decoration-none">Galápagos</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3">
-            <h5>Contacto</h5>
-            <ul class="list-unstyled">
-              <li>info@ecuadorturistico.ec</li>
-              <li>+593 99 123 4567</li>
-              <li>Quito • Ecuador</li>
-            </ul>
+
+          <div class="col mb-4">
+            <h5 class="text-white fw-bold mb-3">Síguenos</h5>
+            <div class="d-flex gap-3">
+              <a
+                href="#"
+                class="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center"
+                style="width: 40px; height: 40px"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a
+                href="#"
+                class="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center"
+                style="width: 40px; height: 40px"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a
+                href="#"
+                class="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center"
+                style="width: 40px; height: 40px"
+                ><i class="bi bi-tiktok"></i
+              ></a>
+            </div>
           </div>
         </div>
-        <div class="text-center mt-4 pt-4 border-top border-secondary">
-          <p class="mb-0">© 2025 Ecuador Turístico • El país que lo tiene TODO</p>
-          <p>Hecho con amor para el mundo</p>
+
+        <hr class="border-secondary mt-4" />
+        <div class="text-center pt-2">
+          <p class="small text-secondary mb-0">
+            © 2025 Ecuador Turístico. Todos los derechos reservados.
+          </p>
         </div>
       </div>
     </footer>
 
-    <!-- Bootstrap 5.3.8 JavaScript Bundle (exacto como tú lo tenías) -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      (() => {
+        "use strict";
+
+        // 1. Inicializar AOS
+        AOS.init({
+          once: true,
+          offset: 100,
+        });
+
+        // 2. Validación Bootstrap
+        document.querySelectorAll(".needs-validation").forEach((form) => {
+          form.addEventListener("submit", (e) => {
+            if (!form.checkValidity()) {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+            form.classList.add("was-validated");
+          });
+        });
+
+        // 3. Zoom en tarjetas con JS puro
+        document.querySelectorAll(".zoom-card").forEach((card) => {
+          const img = card.querySelector("img");
+          if (img) {
+            img.style.transition = "transform 0.5s ease";
+            card.addEventListener(
+              "mouseenter",
+              () => (img.style.transform = "scale(1.1)")
+            );
+            card.addEventListener(
+              "mouseleave",
+              () => (img.style.transform = "scale(1.0)")
+            );
+          }
+        });
+
+        // 4. Efecto Hover en Navbar Links (Cajas interactivas)
+        // Seleccionamos todos los enlaces con la clase 'nav-box-link'
+        document.querySelectorAll(".nav-box-link").forEach((link) => {
+          // Estilos base para transición suave
+          link.style.transition = "all 0.3s ease";
+          link.style.border = "2px solid transparent";
+          link.style.borderRadius = "8px"; // Un poco redondeado el cuadro
+
+          link.addEventListener("mouseenter", () => {
+            // Al pasar el mouse: fondo blanco transparente, borde, moverse arriba y sombra
+            link.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
+            link.style.borderColor = "#ffffff";
+            link.style.transform = "translateY(-3px)";
+            link.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
+          });
+
+          link.addEventListener("mouseleave", () => {
+            // Al salir el mouse: volver al estado original
+            link.style.backgroundColor = "transparent";
+            link.style.borderColor = "transparent";
+            link.style.transform = "translateY(0)";
+            link.style.boxShadow = "none";
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
+l>
