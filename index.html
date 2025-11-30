@@ -1,259 +1,343 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ecuador Turístico - El País de los 4 Mundos</title>
 
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
-  <body class="bg-dark text-light">
-    <nav
-      class="navbar navbar-expand-lg bg-dark navbar-dark shadow-lg sticky-top p-0"
+  <body
+    class="bg-gray-900 text-gray-100 font-sans antialiased [&::-webkit-scrollbar]:w-2.5 [&::-webkit-scrollbar-track]:bg-gray-900 [&::-webkit-scrollbar-thumb]:bg-gray-600 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-gray-500"
+  >
+   <nav
+      class="fixed w-full top-0 z-50 transition-all duration-300 bg-gray-950/80 backdrop-blur-xl border-b border-white/10"
       data-aos="fade-down"
       data-aos-duration="1000"
     >
-      <div class="container py-3">
-        <a class="navbar-brand d-flex align-items-center" href="#">
+      <div class="container mx-auto px-6 py-5">
+        <div class="flex justify-between items-center">
+          
+          <a class="flex items-center gap-4 group" href="#">
+            <div
+              class="relative bg-white/5 border border-white/10 rounded-xl p-2 shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-transform duration-300 group-hover:scale-105"
+            >
+              <img
+                src="imagenes/vida.png"
+                alt="Logo"
+                class="w-14 h-auto object-contain"
+              />
+            </div>
+            <div class="hidden sm:block">
+              <span class="block text-xs text-gray-400 font-medium tracking-widest uppercase mb-0.5">Turismo</span>
+              <span
+                class="font-black text-2xl tracking-wide uppercase text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500 leading-none"
+                >Ecuador</span
+              >
+            </div>
+          </a>
+
+          <button
+            id="menu-btn"
+            class="lg:hidden text-gray-300 hover:text-white focus:outline-none cursor-pointer p-2 rounded-lg hover:bg-white/10 transition-colors"
+          >
+            <i class="ri-menu-4-line text-3xl"></i>
+          </button>
+
           <div
-            class="bg-white rounded-3 p-2 shadow-sm me-3 d-flex align-items-center justify-content-center"
+            id="menu-items"
+            class="hidden lg:flex lg:items-center lg:gap-10 absolute lg:static top-full left-0 w-full lg:w-auto bg-gray-950 lg:bg-transparent shadow-2xl lg:shadow-none flex-col lg:flex-row p-8 lg:p-0 border-t border-gray-800 lg:border-none"
           >
-            <img
-              src="imagenes/vida.png"
-              alt="Logo"
-              class="img-fluid"
-              width="80"
-            />
+            <a
+              href="#inicio"
+              class="text-gray-300 text-sm font-bold uppercase tracking-widest hover:text-white transition-colors duration-300 py-3 lg:py-0 relative group"
+              >Inicio
+              <span class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+            </a>
+            
+            <a
+              href="#destinos"
+              class="text-gray-300 text-sm font-bold uppercase tracking-widest hover:text-white transition-colors duration-300 py-3 lg:py-0 relative group"
+              >Destinos
+              <span class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+            </a>
+            
+            <a
+              href="#videos"
+              class="text-gray-300 text-sm font-bold uppercase tracking-widest hover:text-white transition-colors duration-300 py-3 lg:py-0 relative group"
+              >Videos
+              <span class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+            </a>
+            
+            <a
+              href="#estadisticas"
+              class="text-gray-300 text-sm font-bold uppercase tracking-widest hover:text-white transition-colors duration-300 py-3 lg:py-0 relative group"
+              >Estadísticas
+              <span class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+            </a>
+
+            <a
+              href="#contacto"
+              class="mt-6 lg:mt-0 px-8 py-3 bg-white text-gray-900 text-sm font-extrabold uppercase tracking-widest rounded-full shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:bg-green-500 hover:text-white hover:shadow-[0_0_25px_rgba(34,197,94,0.6)] hover:-translate-y-1 transition-all duration-300 text-center"
+              >Reservar</a
+            >
           </div>
-          <span class="fw-bold fs-3 text-white tracking-wide"
-            >ECUADOR TURÍSTICO</span
-          >
-        </a>
-
-        <button
-          class="navbar-toggler border-0"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto gap-2 align-items-center">
-            <li class="nav-item">
-              <a
-                class="nav-link text-white fw-semibold px-3 py-2 nav-box-link"
-                href="#inicio"
-                >Inicio</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white fw-semibold px-3 py-2 nav-box-link"
-                href="#destinos"
-                >Destinos</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white fw-semibold px-3 py-2 nav-box-link"
-                href="#videos"
-                >Videos</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white fw-semibold px-3 py-2 nav-box-link"
-                href="#estadisticas"
-                >Estadísticas</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white fw-semibold px-3 py-2 nav-box-link"
-                href="#contacto"
-                >Contacto</a
-              >
-            </li>
-          </ul>
         </div>
       </div>
 
-      <div class="d-flex w-100 position-absolute bottom-0 start-0">
-        <div class="flex-fill bg-warning p-1"></div>
-        <div class="flex-fill bg-primary p-1"></div>
-        <div class="flex-fill bg-danger p-1"></div>
+      <div class="flex w-full absolute bottom-0 left-0 h-[3px]">
+        <div class="flex-1 bg-yellow-400 shadow-[0_0_6px_rgba(250,204,21,0.8)] z-10"></div>
+        <div class="flex-1 bg-blue-600 shadow-[0_0_6px_rgba(37,99,235,0.8)] z-10"></div>
+        <div class="flex-1 bg-red-600 shadow-[0_0_6px_rgba(220,38,38,0.8)] z-10"></div>
       </div>
     </nav>
     <section
       id="inicio"
-      class="position-relative text-white text-center min-vh-100 d-flex align-items-center justify-content-center overflow-hidden"
+      class="relative text-white text-center min-h-screen flex items-center justify-center overflow-hidden"
     >
-      <img
-        src="imagenes/heroReal.png"
-        class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
-        alt="Ecuador"
-      />
+      <div class="absolute inset-0 w-full h-full overflow-hidden">
+        <img
+          src="imagenes/heroReal.png"
+          class="w-full h-full object-cover transform scale-105 hover:scale-100 transition-transform duration-[10s] ease-in-out"
+          alt="Ecuador Paisaje"
+        />
+      </div>
+
       <div
-        class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75"
+        class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-gray-900"
       ></div>
 
       <div
-        class="container position-relative"
+        class="container mx-auto px-4 relative z-10 flex flex-col items-center"
         data-aos="zoom-in"
         data-aos-delay="200"
       >
-        <h1 class="display-1 fw-bold mb-4">Ecuador, brilla auténticamente</h1>
-        <p class="lead fs-1 mb-5">Cuatro mundos. Un solo país.</p>
+        <span
+          class="mb-4 py-1 px-3 rounded-full bg-white/10 border border-white/20 text-sm font-medium backdrop-blur-sm text-yellow-300 uppercase tracking-widest"
+        >
+          Destino Mundial
+        </span>
+
+        <h1
+          class="text-5xl md:text-8xl font-extrabold mb-6 leading-tight drop-shadow-2xl"
+        >
+          Ecuador,
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200"
+            >brilla</span
+          >
+          auténticamente
+        </h1>
+
+        <p
+          class="text-xl md:text-3xl mb-10 text-gray-200 font-light max-w-2xl mx-auto text-shadow-sm"
+        >
+          Cuatro mundos infinitos.
+          <span class="font-semibold text-white">Un solo país.</span>
+        </p>
+
         <a
           href="#destinos"
-          class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill shadow-lg"
+          class="group relative inline-flex items-center justify-center gap-3 bg-yellow-500 text-gray-900 px-10 py-4 rounded-full text-lg font-bold shadow-[0_0_20px_rgba(234,179,8,0.6)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(234,179,8,0.8)] hover:bg-yellow-400"
         >
-          Explora Ahora
+          <span>Explora Ahora</span>
+          <i
+            class="ri-arrow-right-line transition-transform duration-300 group-hover:translate-x-1"
+          ></i>
         </a>
+      </div>
+
+      <div
+        class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden md:block text-white/70"
+      >
+        <div class="flex flex-col items-center gap-1">
+          <span class="text-xs uppercase tracking-widest text-white/50"
+            >Descubre</span
+          >
+          <i class="ri-arrow-down-double-line text-2xl"></i>
+        </div>
       </div>
     </section>
 
-    <section class="py-5 bg-black">
-      <div class="container py-4">
-        <div class="text-center mb-5" data-aos="fade-down">
-          <h2 class="display-4 fw-bold text-white mb-3">
-            Bienvenido al <span class="text-success">Centro del Mundo</span>
+    <section class="py-24 bg-gray-950 relative overflow-hidden">
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none opacity-20"
+      >
+        <div
+          class="absolute top-20 left-1/4 w-96 h-96 bg-blue-900 rounded-full blur-[120px]"
+        ></div>
+        <div
+          class="absolute bottom-20 right-1/4 w-96 h-96 bg-green-900 rounded-full blur-[120px]"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-20" data-aos="fade-down">
+          <h2
+            class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight"
+          >
+            Bienvenido al
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600"
+              >Centro del Mundo</span
+            >
           </h2>
 
-          <div class="d-flex justify-content-center gap-0 mt-3">
-            <div class="bg-warning px-5 py-1 rounded-start"></div>
-            <div class="bg-primary px-5 py-1"></div>
-            <div class="bg-danger px-5 py-1 rounded-end"></div>
+          <div class="flex justify-center items-center gap-1 mt-6">
+            <div
+              class="h-1.5 w-12 rounded-full bg-yellow-400 shadow-[0_0_10px_rgba(250,204,21,0.5)]"
+            ></div>
+            <div
+              class="h-1.5 w-12 rounded-full bg-blue-600 shadow-[0_0_10px_rgba(37,99,235,0.5)]"
+            ></div>
+            <div
+              class="h-1.5 w-12 rounded-full bg-red-600 shadow-[0_0_10px_rgba(220,38,38,0.5)]"
+            ></div>
           </div>
         </div>
 
-        <div class="row g-5">
-          <div class="col-lg-7" data-aos="fade-right">
-            <div class="mb-5">
-              <p class="fs-5 text-white lh-base">
-                <span class="fw-bold text-warning fs-4">Ecuador</span> no es
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div class="lg:col-span-7" data-aos="fade-right">
+            <div class="mb-12 space-y-6">
+              <p
+                class="text-xl md:text-2xl text-gray-200 leading-relaxed font-light"
+              >
+                <span class="font-bold text-yellow-400">Ecuador</span> no es
                 solo un punto en el mapa; es el escenario donde la naturaleza
-                decidió romper todas las reglas. Situado en el corazón del
-                planeta, somos un concentrado de vida pura donde la aventura no
-                tiene límites.
+                decidió romper todas las reglas.
               </p>
-              <p class="fs-5 text-light opacity-75 lh-base">
-                Aquí no vienes a ver paisajes, vienes a sentirlos. Prepárate
-                para descubrir un territorio mágico, diseñado para sorprenderte
-                y dividido en
-                <strong class="text-white border-bottom border-warning border-2"
-                  >cuatro regiones inigualables.</strong
-                >
+              <p class="text-lg text-gray-400 leading-relaxed">
+                Situado en el corazón del planeta, somos un concentrado de vida
+                pura. Prepárate para descubrir un territorio mágico dividido en
+                <span class="inline-block relative font-bold text-white">
+                  cuatro regiones inigualables
+                  <span
+                    class="absolute bottom-0 left-0 w-full h-1 bg-yellow-500/50 -rotate-1"
+                  ></span> </span
+                >.
               </p>
             </div>
 
             <div
-              class="card bg-dark border border-secondary border-opacity-50 rounded-4 shadow"
+              class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-colors duration-300"
             >
-              <div class="card-body p-4">
-                <h4
-                  class="text-white fw-bold mb-4 border-bottom border-secondary border-opacity-25 pb-3"
-                >
-                  <i class="bi bi-star-fill text-warning me-2"></i> ¿Por qué
-                  elegirnos?
-                </h4>
+              <h4 class="text-white font-bold text-2xl mb-8 flex items-center">
+                <i class="ri-flashlight-fill text-yellow-400 mr-3 text-3xl"></i>
+                ¿Por qué elegirnos?
+              </h4>
 
-                <div class="d-flex flex-column gap-4">
-                  <div class="d-flex align-items-start">
-                    <div class="me-3 mt-1">
-                      <i class="bi bi-award-fill text-primary fs-3"></i>
-                    </div>
-                    <div>
-                      <h5 class="fw-bold text-white mb-1">
-                        Primer Patrimonio Mundial
-                      </h5>
-                      <p class="mb-0 text-light opacity-75 fs-6">
-                        Quito y Galápagos (UNESCO 1978).
-                      </p>
-                    </div>
+              <div class="space-y-8">
+                <div class="flex items-start group">
+                  <div
+                    class="mr-5 mt-1 p-3 rounded-2xl bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300"
+                  >
+                    <i class="ri-award-fill text-2xl"></i>
                   </div>
-                  <div class="d-flex align-items-start">
-                    <div class="me-3 mt-1">
-                      <i class="bi bi-wallet2 text-success fs-3"></i>
-                    </div>
-                    <div>
-                      <h5 class="fw-bold text-white mb-1">
-                        Facilidad de Viaje
-                      </h5>
-                      <p class="mb-0 text-light opacity-75 fs-6">
-                        Economía dolarizada y fácil acceso.
-                      </p>
-                    </div>
+                  <div>
+                    <h5
+                      class="font-bold text-white text-lg mb-1 group-hover:text-blue-300 transition-colors"
+                    >
+                      Primer Patrimonio Mundial
+                    </h5>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                      Quito y Galápagos fueron los primeros sitios declarados
+                      por la UNESCO en 1978.
+                    </p>
                   </div>
-                  <div class="d-flex align-items-start">
-                    <div class="me-3 mt-1">
-                      <i class="bi bi-flower1 text-danger fs-3"></i>
-                    </div>
-                    <div>
-                      <h5 class="fw-bold text-white mb-1">Cuna del Cacao</h5>
-                      <p class="mb-0 text-light opacity-75 fs-6">
-                        El origen del mejor chocolate está aquí.
-                      </p>
-                    </div>
+                </div>
+
+                <div class="flex items-start group">
+                  <div
+                    class="mr-5 mt-1 p-3 rounded-2xl bg-green-500/10 text-green-400 group-hover:bg-green-500 group-hover:text-white transition-all duration-300"
+                  >
+                    <i class="ri-wallet-3-fill text-2xl"></i>
+                  </div>
+                  <div>
+                    <h5
+                      class="font-bold text-white text-lg mb-1 group-hover:text-green-300 transition-colors"
+                    >
+                      Facilidad de Viaje
+                    </h5>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                      Economía dolarizada, distancias cortas y gente amable.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start group">
+                  <div
+                    class="mr-5 mt-1 p-3 rounded-2xl bg-red-500/10 text-red-400 group-hover:bg-red-500 group-hover:text-white transition-all duration-300"
+                  >
+                    <i class="ri-plant-fill text-2xl"></i>
+                  </div>
+                  <div>
+                    <h5
+                      class="font-bold text-white text-lg mb-1 group-hover:text-red-300 transition-colors"
+                    >
+                      Cuna del Cacao
+                    </h5>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                      Aquí nació la domesticación del cacao hace más de 5,000
+                      años.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-5" data-aos="fade-left">
+          <div class="lg:col-span-5 h-full" data-aos="fade-left">
             <div
-              class="card bg-dark border border-success border-opacity-25 rounded-4 shadow-lg h-100 text-center position-relative overflow-hidden"
+              class="relative h-full bg-gradient-to-b from-gray-900 to-black border border-gray-800 rounded-3xl p-8 md:p-12 text-center overflow-hidden group hover:border-gray-600 transition-colors duration-500 shadow-2xl flex flex-col justify-center"
             >
               <div
-                class="position-absolute top-0 start-0 w-100 bg-success opacity-10 pt-2"
+                class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-blue-900/20 to-transparent opacity-50"
               ></div>
 
-              <div
-                class="card-body p-5 d-flex flex-column justify-content-center align-items-center"
-              >
-                <div
-                  class="mb-4 p-4 rounded-circle bg-success bg-opacity-10 border border-success border-opacity-25 shadow"
-                >
-                  <i class="bi bi-globe-americas display-3 text-success"></i>
+              <div class="relative z-10 flex flex-col items-center">
+                <div class="mb-8 relative">
+                  <div
+                    class="absolute inset-0 bg-green-500 blur-[40px] opacity-20 group-hover:opacity-40 transition-opacity duration-500"
+                  ></div>
+                  <i
+                    class="ri-earth-fill text-8xl text-green-500 relative z-10 drop-shadow-lg transform group-hover:scale-110 transition-transform duration-500"
+                  ></i>
                 </div>
 
-                <h3 class="text-white fw-bold mb-3 display-6">
+                <h3
+                  class="text-white font-bold mb-4 text-3xl md:text-4xl tracking-tight"
+                >
                   El Punto Más Alto
                 </h3>
 
-                <p class="text-white fs-5 mb-4 px-2">
+                <p class="text-gray-300 text-lg mb-8 leading-relaxed">
                   ¿Sabías que el volcán
-                  <strong class="text-warning">Chimborazo</strong> es el punto
-                  más cercano al Sol?
+                  <strong class="text-yellow-400">Chimborazo</strong> es el
+                  punto más cercano al Sol en todo el planeta?
                 </p>
 
                 <div
-                  class="bg-black bg-opacity-25 p-4 rounded-3 border border-secondary border-opacity-25 mb-5"
+                  class="bg-white/5 border border-white/10 p-6 rounded-2xl mb-10 w-full transform group-hover:-translate-y-1 transition-transform duration-300"
                 >
-                  <p class="text-light mb-0 fst-italic fs-6">
-                    "Su cumbre está más lejos del centro de la Tierra que el
-                    Everest."
+                  <p class="text-gray-400 italic font-medium">
+                    "Su cumbre está 2km más lejos del centro de la Tierra que el
+                    monte Everest."
                   </p>
                 </div>
 
                 <a
                   href="#destinos"
-                  class="btn btn-outline-light rounded-pill px-5 py-3 fw-bold shadow hover-scale fs-6"
+                  class="inline-flex items-center gap-2 border border-white text-white rounded-full px-10 py-3 font-bold hover:bg-white hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]"
                 >
-                  Ver Destinos
+                  <span>Ver Destinos</span>
+                  <i class="ri-arrow-right-line"></i>
                 </a>
               </div>
             </div>
@@ -262,720 +346,973 @@
       </div>
     </section>
 
-    <main class="container py-5">
-      <section class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 my-5">
-        <div class="col" data-aos="fade-up" data-aos-delay="100">
-          <div
-            class="card h-100 bg-dark border-secondary rounded-4 overflow-hidden shadow zoom-card"
-          >
-            <div class="overflow-hidden ratio ratio-4x3">
-              <img
-                src="imagenes/costa.jpg"
-                class="object-fit-cover w-100 h-100 transition-img"
-                alt="Costa"
-              />
-            </div>
-            <div class="card-body text-center p-4">
-              <h3 class="text-white fw-bold">Playa Costa</h3>
-              <p class="text-secondary mb-0">
-                Playas paradisíacas y ceviche brutal.
-              </p>
-            </div>
-          </div>
+    <main class="container mx-auto px-4 py-12">
+      <div class="text-center mb-16 relative" data-aos="fade-up">
+          
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 h-32 bg-green-500/10 blur-[80px] rounded-full pointer-events-none"></div>
+
+          <h2 class="relative z-10 text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-emerald-600 mb-3 uppercase tracking-tight drop-shadow-sm">
+            Explora el País
+          </h2>
+
+          <h3 class="relative z-10 text-3xl md:text-4xl font-bold text-white mb-6">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 drop-shadow-sm">4 Mundos</span>, 
+            <span class="text-gray-100">1 Destino</span>
+          </h3>
+
+          <div class="relative z-10 w-32 h-1.5 mx-auto rounded-full bg-gradient-to-r from-yellow-400 via-blue-600 to-red-600 shadow-[0_0_20px_rgba(37,99,235,0.8)]"></div>
+          
+          <p class="relative z-10 mt-6 text-gray-300 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+            La diversidad más compacta del planeta te espera.
+          </p>
+
         </div>
-
-        <div class="col" data-aos="fade-up" data-aos-delay="200">
-          <div
-            class="card h-100 bg-dark border-secondary rounded-4 overflow-hidden shadow zoom-card"
-          >
-            <div class="overflow-hidden ratio ratio-4x3">
-              <img
-                src="imagenes/sierra.jpg"
-                class="object-fit-cover w-100 h-100 transition-img"
-                alt="Sierra"
-              />
-            </div>
-            <div class="card-body text-center p-4">
-              <h3 class="text-white fw-bold">Montaña Sierra</h3>
-              <p class="text-secondary mb-0">
-                Volcanes activos y ciudades coloniales.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col" data-aos="fade-up" data-aos-delay="300">
-          <div
-            class="card h-100 bg-dark border-secondary rounded-4 overflow-hidden shadow zoom-card"
-          >
-            <div class="overflow-hidden ratio ratio-4x3">
-              <img
-                src="imagenes/amazonia.jpg"
-                class="object-fit-cover w-100 h-100 transition-img"
-                alt="Amazonía"
-              />
-            </div>
-            <div class="card-body text-center p-4">
-              <h3 class="text-white fw-bold">Selva Amazonía</h3>
-              <p class="text-secondary mb-0">
-                Selva viva con más animales que en Netflix.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col" data-aos="fade-up" data-aos-delay="400">
-          <div
-            class="card h-100 bg-dark border-secondary rounded-4 overflow-hidden shadow zoom-card"
-          >
-            <div class="overflow-hidden ratio ratio-4x3">
-              <img
-                src="imagenes/galapagos.jpg"
-                class="object-fit-cover w-100 h-100 transition-img"
-                alt="Galápagos"
-              />
-            </div>
-            <div class="card-body text-center p-4">
-              <h3 class="text-white fw-bold">Galápagos</h3>
-              <p class="text-secondary mb-0">
-                Donde las tortugas son influencers.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="destinos" class="container my-5 py-5">
-        <div class="row mb-5 align-items-end" data-aos="fade-up">
-          <div class="col-md-8">
-            <h2 class="display-5 fw-bold text-white mb-0">Destinos Selectos</h2>
-            <div class="d-flex mt-3" style="width: 100px; height: 4px">
-              <div class="flex-fill bg-warning"></div>
-              <div class="flex-fill bg-primary"></div>
-              <div class="flex-fill bg-danger"></div>
-            </div>
-          </div>
-          <div class="col-md-4 text-md-end mt-3 mt-md-0">
-            <p class="text-secondary mb-0">Explora los colores de Ecuador</p>
-          </div>
-        </div>
-
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-          <div class="col" data-aos="fade-up" data-aos-delay="0">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div data-aos="fade-up" data-aos-delay="100">
             <div
-              class="card h-100 bg-transparent border border-warning rounded-3 p-3 shadow-sm"
+              class="group relative h-full bg-gray-900 border border-gray-800 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(245,158,11,0.2)] hover:border-orange-500/50"
             >
-              <div class="card-body d-flex align-items-center">
-                <i class="bi bi-buildings text-warning fs-2 me-3"></i>
-                <div>
-                  <h5 class="card-title text-white fw-bold mb-1">Quito</h5>
-                  <p class="card-text text-secondary small">
-                    Capital del Centro del Mundo
-                  </p>
+              <div
+                class="absolute top-4 right-4 z-10 bg-black/50 backdrop-blur-md text-orange-400 text-xs font-bold px-3 py-1 rounded-full border border-orange-500/30"
+              >
+                Litoral
+              </div>
+
+              <div class="overflow-hidden aspect-[4/5] relative">
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent z-10 opacity-80"
+                ></div>
+                <img
+                  src="imagenes/costa.jpg"
+                  class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                  alt="Costa"
+                />
+              </div>
+
+              <div class="absolute bottom-0 left-0 w-full p-6 z-20">
+                <div class="mb-2 flex items-center gap-2 text-orange-500">
+                  <i class="ri-sun-foggy-fill text-xl"></i>
+                  <span class="h-px flex-1 bg-orange-500/50"></span>
                 </div>
+                <h3
+                  class="text-white font-bold text-2xl mb-2 group-hover:text-orange-400 transition-colors"
+                >
+                  Playa Costa
+                </h3>
+                <p
+                  class="text-gray-300 text-sm leading-relaxed opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"
+                >
+                  Playas paradisíacas, sol eterno y un ceviche que te cambiará
+                  la vida.
+                </p>
               </div>
             </div>
           </div>
 
-          <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <div data-aos="fade-up" data-aos-delay="200">
             <div
-              class="card h-100 bg-transparent border border-primary rounded-3 p-3 shadow-sm"
+              class="group relative h-full bg-gray-900 border border-gray-800 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(59,130,246,0.2)] hover:border-blue-500/50"
             >
-              <div class="card-body d-flex align-items-center">
-                <i class="bi bi-water text-primary fs-2 me-3"></i>
-                <div>
-                  <h5 class="card-title text-white fw-bold mb-1">Galápagos</h5>
-                  <p class="card-text text-secondary small">
-                    Laboratorio natural viviente
-                  </p>
+              <div
+                class="absolute top-4 right-4 z-10 bg-black/50 backdrop-blur-md text-blue-400 text-xs font-bold px-3 py-1 rounded-full border border-blue-500/30"
+              >
+                Andes
+              </div>
+
+              <div class="overflow-hidden aspect-[4/5] relative">
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent z-10 opacity-80"
+                ></div>
+                <img
+                  src="imagenes/sierra.jpg"
+                  class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                  alt="Sierra"
+                />
+              </div>
+
+              <div class="absolute bottom-0 left-0 w-full p-6 z-20">
+                <div class="mb-2 flex items-center gap-2 text-blue-500">
+                  <i class="ri-mountain-fill text-xl"></i>
+                  <span class="h-px flex-1 bg-blue-500/50"></span>
                 </div>
+                <h3
+                  class="text-white font-bold text-2xl mb-2 group-hover:text-blue-400 transition-colors"
+                >
+                  Montaña Sierra
+                </h3>
+                <p
+                  class="text-gray-300 text-sm leading-relaxed opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"
+                >
+                  Avenida de los volcanes, ciudades patrimoniales y cultura
+                  viva.
+                </p>
               </div>
             </div>
           </div>
 
-          <div class="col" data-aos="fade-up" data-aos-delay="200">
+          <div data-aos="fade-up" data-aos-delay="300">
             <div
-              class="card h-100 bg-transparent border border-danger rounded-3 p-3 shadow-sm"
+              class="group relative h-full bg-gray-900 border border-gray-800 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(34,197,94,0.2)] hover:border-green-500/50"
             >
-              <div class="card-body d-flex align-items-center">
-                <i class="bi bi-droplet text-danger fs-2 me-3"></i>
-                <div>
-                  <h5 class="card-title text-white fw-bold mb-1">Baños</h5>
-                  <p class="card-text text-secondary small">
-                    Aventura y descanso
-                  </p>
+              <div
+                class="absolute top-4 right-4 z-10 bg-black/50 backdrop-blur-md text-green-400 text-xs font-bold px-3 py-1 rounded-full border border-green-500/30"
+              >
+                Selva
+              </div>
+
+              <div class="overflow-hidden aspect-[4/5] relative">
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent z-10 opacity-80"
+                ></div>
+                <img
+                  src="imagenes/amazonia.jpg"
+                  class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                  alt="Amazonía"
+                />
+              </div>
+
+              <div class="absolute bottom-0 left-0 w-full p-6 z-20">
+                <div class="mb-2 flex items-center gap-2 text-green-500">
+                  <i class="ri-plant-fill text-xl"></i>
+                  <span class="h-px flex-1 bg-green-500/50"></span>
                 </div>
+                <h3
+                  class="text-white font-bold text-2xl mb-2 group-hover:text-green-400 transition-colors"
+                >
+                  Selva Amazonía
+                </h3>
+                <p
+                  class="text-gray-300 text-sm leading-relaxed opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"
+                >
+                  El pulmón del mundo. Selva virgen con más biodiversidad que en
+                  Netflix.
+                </p>
               </div>
             </div>
           </div>
 
-          <div class="col" data-aos="fade-up" data-aos-delay="0">
+          <div data-aos="fade-up" data-aos-delay="400">
             <div
-              class="card h-100 bg-transparent border border-warning rounded-3 p-3 shadow-sm"
+              class="group relative h-full bg-gray-900 border border-gray-800 rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(6,182,212,0.2)] hover:border-cyan-500/50"
             >
-              <div class="card-body d-flex align-items-center">
-                <i class="bi bi-brightness-high text-warning fs-2 me-3"></i>
-                <div>
-                  <h5 class="card-title text-white fw-bold mb-1">Montañita</h5>
-                  <p class="card-text text-secondary small">
-                    Surf internacional
-                  </p>
-                </div>
+              <div
+                class="absolute top-4 right-4 z-10 bg-black/50 backdrop-blur-md text-cyan-400 text-xs font-bold px-3 py-1 rounded-full border border-cyan-500/30"
+              >
+                Insular
               </div>
-            </div>
-          </div>
 
-          <div class="col" data-aos="fade-up" data-aos-delay="100">
-            <div
-              class="card h-100 bg-transparent border border-primary rounded-3 p-3 shadow-sm"
-            >
-              <div class="card-body d-flex align-items-center">
-                <i class="bi bi-cone-striped text-primary fs-2 me-3"></i>
-                <div>
-                  <h5 class="card-title text-white fw-bold mb-1">Cotopaxi</h5>
-                  <p class="card-text text-secondary small">
-                    Volcán activo majestuoso
-                  </p>
-                </div>
+              <div class="overflow-hidden aspect-[4/5] relative">
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent z-10 opacity-80"
+                ></div>
+                <img
+                  src="imagenes/galapagos.jpg"
+                  class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                  alt="Galápagos"
+                />
               </div>
-            </div>
-          </div>
 
-          <div class="col" data-aos="fade-up" data-aos-delay="200">
-            <div
-              class="card h-100 bg-transparent border border-danger rounded-3 p-3 shadow-sm"
-            >
-              <div class="card-body d-flex align-items-center">
-                <i class="bi bi-eye text-danger fs-2 me-3"></i>
-                <div>
-                  <h5 class="card-title text-white fw-bold mb-1">Quilotoa</h5>
-                  <p class="card-text text-secondary small">Cráter y laguna</p>
+              <div class="absolute bottom-0 left-0 w-full p-6 z-20">
+                <div class="mb-2 flex items-center gap-2 text-cyan-500">
+                  <i class="ri-anchor-fill text-xl"></i>
+                  <span class="h-px flex-1 bg-cyan-500/50"></span>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col" data-aos="fade-up" data-aos-delay="0">
-            <div
-              class="card h-100 bg-transparent border border-warning rounded-3 p-3 shadow-sm"
-            >
-              <div class="card-body d-flex align-items-center">
-                <i class="bi bi-columns text-warning fs-2 me-3"></i>
-                <div>
-                  <h5 class="card-title text-white fw-bold mb-1">Cuenca</h5>
-                  <p class="card-text text-secondary small">Joyas coloniales</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col" data-aos="fade-up" data-aos-delay="100">
-            <div
-              class="card h-100 bg-transparent border border-primary rounded-3 p-3 shadow-sm"
-            >
-              <div class="card-body d-flex align-items-center">
-                <i class="bi bi-shop-window text-primary fs-2 me-3"></i>
-                <div>
-                  <h5 class="card-title text-white fw-bold mb-1">Guayaquil</h5>
-                  <p class="card-text text-secondary small">Puerto principal</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col" data-aos="fade-up" data-aos-delay="200">
-            <div
-              class="card h-100 bg-transparent border border-danger rounded-3 p-3 shadow-sm"
-            >
-              <div class="card-body d-flex align-items-center">
-                <i class="bi bi-basket text-danger fs-2 me-3"></i>
-                <div>
-                  <h5 class="card-title text-white fw-bold mb-1">Otavalo</h5>
-                  <p class="card-text text-secondary small">
-                    Tradición y comercio
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col" data-aos="fade-up" data-aos-delay="0">
-            <div
-              class="card h-100 bg-transparent border border-warning rounded-3 p-3 shadow-sm"
-            >
-              <div class="card-body d-flex align-items-center">
-                <i class="bi bi-feather text-warning fs-2 me-3"></i>
-                <div>
-                  <h5 class="card-title text-white fw-bold mb-1">Mindo</h5>
-                  <p class="card-text text-secondary small">
-                    Santuario de aves
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col" data-aos="fade-up" data-aos-delay="100">
-            <div
-              class="card h-100 bg-transparent border border-primary rounded-3 p-3 shadow-sm"
-            >
-              <div class="card-body d-flex align-items-center">
-                <i class="bi bi-compass text-primary fs-2 me-3"></i>
-                <div>
-                  <h5 class="card-title text-white fw-bold mb-1">Pto. Ayora</h5>
-                  <p class="card-text text-secondary small">
-                    Base de exploración
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col" data-aos="fade-up" data-aos-delay="200">
-            <div
-              class="card h-100 bg-transparent border border-danger rounded-3 p-3 shadow-sm"
-            >
-              <div class="card-body d-flex align-items-center">
-                <i class="bi bi-tree text-danger fs-2 me-3"></i>
-                <div>
-                  <h5 class="card-title text-white fw-bold mb-1">Yasuní</h5>
-                  <p class="card-text text-secondary small">Pulmón del mundo</p>
-                </div>
+                <h3
+                  class="text-white font-bold text-2xl mb-2 group-hover:text-cyan-400 transition-colors"
+                >
+                  Galápagos
+                </h3>
+                <p
+                  class="text-gray-300 text-sm leading-relaxed opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500"
+                >
+                  Laboratorio viviente. Donde las tortugas son las verdaderas
+                  influencers.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="estadisticas" class="py-5 my-5">
-        <h2
-          class="text-center display-4 fw-bold text-white mb-5"
-          data-aos="fade-down"
-        >
-          Ecuador en Números
-        </h2>
-        <div class="row row-cols-2 row-cols-md-4 g-4 justify-content-center">
-          <div class="col" data-aos="zoom-in" data-aos-duration="1000">
-            <div
-              class="bg-danger text-white p-4 rounded-4 text-center shadow-lg h-100 d-flex flex-column justify-content-center"
-            >
-              <h3 class="display-4 fw-bold mb-0">4</h3>
-              <p class="fs-5">Regiones</p>
-            </div>
-          </div>
-          <div class="col" data-aos="zoom-in" data-aos-duration="1200">
-            <div
-              class="bg-info text-white p-4 rounded-4 text-center shadow-lg h-100 d-flex flex-column justify-content-center"
-            >
-              <h3 class="display-4 fw-bold mb-0">2.7M</h3>
-              <p class="fs-5">Turistas</p>
-            </div>
-          </div>
-          <div class="col" data-aos="zoom-in" data-aos-duration="1400">
-            <div
-              class="bg-primary text-white p-4 rounded-4 text-center shadow-lg h-100 d-flex flex-column justify-content-center"
-            >
-              <h3 class="display-4 fw-bold mb-0">100%</h3>
-              <p class="fs-5">Biodiversidad</p>
-            </div>
-          </div>
-          <div class="col" data-aos="zoom-in" data-aos-duration="1600">
-            <div
-              class="bg-success text-white p-4 rounded-4 text-center shadow-lg h-100 d-flex flex-column justify-content-center"
-            >
-              <h3 class="display-4 fw-bold mb-0">24</h3>
-              <p class="fs-5">Provincias</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="videos" class="my-5">
-        <h2
-          class="text-center display-4 fw-bold text-success mb-5"
-          data-aos="fade-up"
-        >
-          Vive Ecuador en Video
-        </h2>
-        <div class="row g-5">
-          <div class="col-lg-6" data-aos="fade-right">
-            <div
-              class="ratio ratio-16x9 rounded-4 shadow-lg overflow-hidden border border-secondary"
-            >
-              <video controls class="rounded-4" preload="metadata">
-                <source src="videos/Ecuadormio.mp4#t=0.3" type="video/mp4" />
-                Tu navegador no soporta videos.
-              </video>
-            </div>
-            <h4 class="text-center mt-3 text-white fw-bold">
-              Ecuador Megadiverso
-            </h4>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-left">
-            <div
-              class="ratio ratio-16x9 rounded-4 shadow-lg overflow-hidden border border-secondary"
-            >
-              <video controls class="rounded-4" preload="metadata">
-                <source src="videos/Galapagos.mp4#t=0.1" type="video/mp4" />
-                Tu navegador no soporta videos.
-              </video>
-            </div>
-            <h4 class="text-center mt-3 text-white fw-bold">
-              Galápagos Encantadas
-            </h4>
-          </div>
-        </div>
-      </section>
-      <section class="container my-5" id="contacto" data-aos="fade-up">
-        <div
-          class="card bg-dark border-secondary shadow-lg rounded-4 overflow-hidden"
-          data-bs-theme="dark"
-        >
-          <div class="d-flex w-100">
-            <div class="flex-fill bg-warning p-1"></div>
-            <div class="flex-fill bg-primary p-1"></div>
-            <div class="flex-fill bg-danger p-1"></div>
-          </div>
-
-          <div class="card-body p-4 p-md-5">
-            <h2 class="display-6 fw-bold text-white mb-4">
-              Planifica tu Viaje a Ecuador
+      <section id="destinos" class="container mx-auto px-4 my-24 py-12">
+        
+        <div class="flex flex-col md:flex-row items-end justify-between mb-16" data-aos="fade-up">
+          <div class="md:w-2/3">
+            <span class="text-green-500 font-bold tracking-widest uppercase text-sm mb-2 block">
+              Tu próxima aventura
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+              Destinos Selectos
             </h2>
+            <div class="w-32 h-1.5 rounded-full bg-gradient-to-r from-yellow-400 via-blue-600 to-red-600 shadow-[0_0_15px_rgba(37,99,235,0.5)]"></div>
+          </div>
+          
+          <div class="md:w-1/3 text-left md:text-right mt-6 md:mt-0">
+            <p class="text-gray-400 text-lg font-light">
+              Explora los colores y sabores de Ecuador
+            </p>
+          </div>
+        </div>
 
-            <div
-              class="bg-body-tertiary p-3 rounded-3 border border-secondary mb-5"
-            >
-              <p class="mb-0 text-secondary-emphasis small text-center">
-                <i class="bi bi-info-circle me-2 text-info"></i>
-                Completa el formulario. Los campos marcados con * son
-                obligatorios.
-              </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div data-aos="fade-up" data-aos-delay="0">
+            <div class="group relative h-full bg-gray-900 border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-yellow-500/50 hover:bg-gray-800 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(234,179,8,0.1)] cursor-pointer">
+              <div class="flex items-start gap-5">
+                <div class="shrink-0 p-3 rounded-xl bg-yellow-500/10 text-yellow-400 group-hover:bg-yellow-500 group-hover:text-black transition-colors duration-300">
+                  <i class="ri-building-4-fill text-3xl"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-start">
+                    <h5 class="text-white font-bold text-xl mb-1 group-hover:text-yellow-400 transition-colors">Quito</h5>
+                    <i class="ri-arrow-right-up-line text-gray-600 group-hover:text-yellow-400 transition-colors"></i>
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed">Capital del Centro del Mundo, patrimonio histórico.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="100">
+            <div class="group relative h-full bg-gray-900 border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-yellow-500/50 hover:bg-gray-800 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(234,179,8,0.1)] cursor-pointer">
+              <div class="flex items-start gap-5">
+                <div class="shrink-0 p-3 rounded-xl bg-yellow-500/10 text-yellow-400 group-hover:bg-yellow-500 group-hover:text-black transition-colors duration-300">
+                  <i class="ri-sun-fill text-3xl"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-start">
+                    <h5 class="text-white font-bold text-xl mb-1 group-hover:text-yellow-400 transition-colors">Montañita</h5>
+                    <i class="ri-arrow-right-up-line text-gray-600 group-hover:text-yellow-400 transition-colors"></i>
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed">Surf internacional, fiesta y atardeceres únicos.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="200">
+            <div class="group relative h-full bg-gray-900 border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-yellow-500/50 hover:bg-gray-800 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(234,179,8,0.1)] cursor-pointer">
+              <div class="flex items-start gap-5">
+                <div class="shrink-0 p-3 rounded-xl bg-yellow-500/10 text-yellow-400 group-hover:bg-yellow-500 group-hover:text-black transition-colors duration-300">
+                  <i class="ri-layout-masonry-fill text-3xl"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-start">
+                    <h5 class="text-white font-bold text-xl mb-1 group-hover:text-yellow-400 transition-colors">Cuenca</h5>
+                    <i class="ri-arrow-right-up-line text-gray-600 group-hover:text-yellow-400 transition-colors"></i>
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed">Joyas coloniales, ríos y artesanías.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+           <div data-aos="fade-up" data-aos-delay="300">
+            <div class="group relative h-full bg-gray-900 border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-yellow-500/50 hover:bg-gray-800 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(234,179,8,0.1)] cursor-pointer">
+              <div class="flex items-start gap-5">
+                <div class="shrink-0 p-3 rounded-xl bg-yellow-500/10 text-yellow-400 group-hover:bg-yellow-500 group-hover:text-black transition-colors duration-300">
+                  <i class="ri-quill-pen-fill text-3xl"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-start">
+                    <h5 class="text-white font-bold text-xl mb-1 group-hover:text-yellow-400 transition-colors">Mindo</h5>
+                    <i class="ri-arrow-right-up-line text-gray-600 group-hover:text-yellow-400 transition-colors"></i>
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed">Santuario de aves y bosque nublado.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div data-aos="fade-up" data-aos-delay="100">
+            <div class="group relative h-full bg-gray-900 border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-blue-500/50 hover:bg-gray-800 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(59,130,246,0.1)] cursor-pointer">
+              <div class="flex items-start gap-5">
+                <div class="shrink-0 p-3 rounded-xl bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors duration-300">
+                  <i class="ri-sailboat-fill text-3xl"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-start">
+                    <h5 class="text-white font-bold text-xl mb-1 group-hover:text-blue-400 transition-colors">Galápagos</h5>
+                    <i class="ri-arrow-right-up-line text-gray-600 group-hover:text-blue-400 transition-colors"></i>
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed">Laboratorio natural viviente único.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="200">
+            <div class="group relative h-full bg-gray-900 border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-blue-500/50 hover:bg-gray-800 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(59,130,246,0.1)] cursor-pointer">
+              <div class="flex items-start gap-5">
+                <div class="shrink-0 p-3 rounded-xl bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors duration-300">
+                  <i class="ri-mountain-fill text-3xl"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-start">
+                    <h5 class="text-white font-bold text-xl mb-1 group-hover:text-blue-400 transition-colors">Cotopaxi</h5>
+                    <i class="ri-arrow-right-up-line text-gray-600 group-hover:text-blue-400 transition-colors"></i>
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed">Volcán activo majestuoso y páramo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="300">
+            <div class="group relative h-full bg-gray-900 border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-blue-500/50 hover:bg-gray-800 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(59,130,246,0.1)] cursor-pointer">
+              <div class="flex items-start gap-5">
+                <div class="shrink-0 p-3 rounded-xl bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors duration-300">
+                  <i class="ri-store-3-fill text-3xl"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-start">
+                    <h5 class="text-white font-bold text-xl mb-1 group-hover:text-blue-400 transition-colors">Guayaquil</h5>
+                    <i class="ri-arrow-right-up-line text-gray-600 group-hover:text-blue-400 transition-colors"></i>
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed">Puerto principal y perla del pacífico.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="0">
+            <div class="group relative h-full bg-gray-900 border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-blue-500/50 hover:bg-gray-800 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(59,130,246,0.1)] cursor-pointer">
+              <div class="flex items-start gap-5">
+                <div class="shrink-0 p-3 rounded-xl bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors duration-300">
+                  <i class="ri-compass-3-fill text-3xl"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-start">
+                    <h5 class="text-white font-bold text-xl mb-1 group-hover:text-blue-400 transition-colors">Pto. Ayora</h5>
+                    <i class="ri-arrow-right-up-line text-gray-600 group-hover:text-blue-400 transition-colors"></i>
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed">Base de exploración en las islas.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div data-aos="fade-up" data-aos-delay="200">
+            <div class="group relative h-full bg-gray-900 border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-red-500/50 hover:bg-gray-800 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(220,38,38,0.1)] cursor-pointer">
+              <div class="flex items-start gap-5">
+                <div class="shrink-0 p-3 rounded-xl bg-red-500/10 text-red-400 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
+                  <i class="ri-drop-fill text-3xl"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-start">
+                    <h5 class="text-white font-bold text-xl mb-1 group-hover:text-red-400 transition-colors">Baños</h5>
+                    <i class="ri-arrow-right-up-line text-gray-600 group-hover:text-red-400 transition-colors"></i>
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed">Capital de la aventura y cascadas.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="300">
+            <div class="group relative h-full bg-gray-900 border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-red-500/50 hover:bg-gray-800 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(220,38,38,0.1)] cursor-pointer">
+              <div class="flex items-start gap-5">
+                <div class="shrink-0 p-3 rounded-xl bg-red-500/10 text-red-400 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
+                  <i class="ri-eye-fill text-3xl"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-start">
+                    <h5 class="text-white font-bold text-xl mb-1 group-hover:text-red-400 transition-colors">Quilotoa</h5>
+                    <i class="ri-arrow-right-up-line text-gray-600 group-hover:text-red-400 transition-colors"></i>
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed">Laguna turquesa dentro de un cráter.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="0">
+            <div class="group relative h-full bg-gray-900 border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-red-500/50 hover:bg-gray-800 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(220,38,38,0.1)] cursor-pointer">
+              <div class="flex items-start gap-5">
+                <div class="shrink-0 p-3 rounded-xl bg-red-500/10 text-red-400 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
+                  <i class="ri-shopping-basket-fill text-3xl"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-start">
+                    <h5 class="text-white font-bold text-xl mb-1 group-hover:text-red-400 transition-colors">Otavalo</h5>
+                    <i class="ri-arrow-right-up-line text-gray-600 group-hover:text-red-400 transition-colors"></i>
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed">Tradición, cultura y mercado indígena.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="100">
+            <div class="group relative h-full bg-gray-900 border border-gray-800 rounded-2xl p-6 transition-all duration-300 hover:border-red-500/50 hover:bg-gray-800 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(220,38,38,0.1)] cursor-pointer">
+              <div class="flex items-start gap-5">
+                <div class="shrink-0 p-3 rounded-xl bg-red-500/10 text-red-400 group-hover:bg-red-500 group-hover:text-white transition-colors duration-300">
+                  <i class="ri-tree-fill text-3xl"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-start">
+                    <h5 class="text-white font-bold text-xl mb-1 group-hover:text-red-400 transition-colors">Yasuní</h5>
+                    <i class="ri-arrow-right-up-line text-gray-600 group-hover:text-red-400 transition-colors"></i>
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed">Reserva de biosfera y pulmón mundial.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    <section id="estadisticas" class="py-10 relative overflow-hidden">
+        
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-800/20 via-gray-900 to-black pointer-events-none"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+          
+          <div class="text-center mb-16" data-aos="fade-down">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+              Ecuador en <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">Cifras</span>
+            </h2>
+            <div class="w-24 h-1.5 mx-auto rounded-full bg-gray-800 flex overflow-hidden">
+              <div class="flex-1 bg-yellow-400"></div>
+              <div class="flex-1 bg-blue-600"></div>
+              <div class="flex-1 bg-red-600"></div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+             
+             <div data-aos="fade-up" data-aos-delay="0">
+              <div class="group relative bg-gray-900 border border-gray-800 p-8 rounded-3xl hover:border-yellow-500/50 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)] transition-all duration-300 hover:-translate-y-2 h-full flex flex-col justify-center items-center overflow-hidden">
+                <i class="ri-map-2-fill absolute -bottom-4 -right-4 text-8xl text-gray-800 opacity-20 group-hover:text-yellow-500/10 group-hover:scale-110 transition-all duration-500"></i>
+                <h3 class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600 mb-2 relative z-10">4</h3>
+                <p class="text-gray-400 font-bold uppercase tracking-widest text-sm relative z-10 group-hover:text-yellow-400 transition-colors">Mundos</p>
+              </div>
             </div>
 
+            <div data-aos="fade-up" data-aos-delay="100">
+              <div class="group relative bg-gray-900 border border-gray-800 p-8 rounded-3xl hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all duration-300 hover:-translate-y-2 h-full flex flex-col justify-center items-center overflow-hidden">
+                <i class="ri-flight-takeoff-fill absolute -bottom-4 -right-4 text-8xl text-gray-800 opacity-20 group-hover:text-blue-500/10 group-hover:scale-110 transition-all duration-500"></i>
+                <h3 class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-b from-blue-300 to-blue-600 mb-2 relative z-10">2.7M</h3>
+                <p class="text-gray-400 font-bold uppercase tracking-widest text-sm relative z-10 group-hover:text-blue-400 transition-colors">Visitantes</p>
+              </div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="200">
+              <div class="group relative bg-gray-900 border border-gray-800 p-8 rounded-3xl hover:border-green-500/50 hover:shadow-[0_0_30px_rgba(34,197,94,0.15)] transition-all duration-300 hover:-translate-y-2 h-full flex flex-col justify-center items-center overflow-hidden">
+                <i class="ri-leaf-fill absolute -bottom-4 -right-4 text-8xl text-gray-800 opacity-20 group-hover:text-green-500/10 group-hover:scale-110 transition-all duration-500"></i>
+                <h3 class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-b from-green-300 to-green-600 mb-2 relative z-10">100%</h3>
+                <p class="text-gray-400 font-bold uppercase tracking-widest text-sm relative z-10 group-hover:text-green-400 transition-colors">Biodiversidad</p>
+              </div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="300">
+              <div class="group relative bg-gray-900 border border-gray-800 p-8 rounded-3xl hover:border-red-500/50 hover:shadow-[0_0_30px_rgba(220,38,38,0.15)] transition-all duration-300 hover:-translate-y-2 h-full flex flex-col justify-center items-center overflow-hidden">
+                <i class="ri-flag-fill absolute -bottom-4 -right-4 text-8xl text-gray-800 opacity-20 group-hover:text-red-500/10 group-hover:scale-110 transition-all duration-500"></i>
+                <h3 class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-b from-red-300 to-red-600 mb-2 relative z-10">24</h3>
+                <p class="text-gray-400 font-bold uppercase tracking-widest text-sm relative z-10 group-hover:text-red-400 transition-colors">Provincias</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="videos" class="relative my-24 py-12 overflow-hidden">
+        
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-5xl bg-green-900/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+          
+          <div class="text-center mb-16" data-aos="fade-up">
+            <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-green-500/10 text-green-400 mb-4 border border-green-500/20">
+              <i class="ri-film-line text-2xl"></i>
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+              Vive Ecuador en <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">Video</span>
+            </h2>
+            <p class="text-gray-400 text-lg">Dale play a tu próxima aventura.</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            
+            <div data-aos="fade-right">
+              <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-red-500 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                
+                <div class="relative p-2 bg-gray-900 ring-1 ring-gray-800 rounded-3xl">
+                  <div class="aspect-video rounded-2xl overflow-hidden relative">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 pointer-events-none z-10"></div>
+                    
+                    <video controls class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" preload="metadata" poster="imagenes/poster-ecuador.jpg"> 
+                      <source src="videos/Ecuadormio.mp4#t=0.3" type="video/mp4" />
+                      Tu navegador no soporta videos.
+                    </video>
+                  </div>
+                </div>
+
+                <div class="mt-6 flex items-center justify-between px-2">
+                  <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-red-500 flex items-center justify-center shadow-lg">
+                      <i class="ri-play-fill text-white text-xl ml-0.5"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-white font-bold text-xl leading-tight group-hover:text-yellow-400 transition-colors">Ecuador Megadiverso</h4>
+                      <p class="text-gray-500 text-sm">Experiencia 4 Mundos</p>
+                    </div>
+                  </div>
+                  <span class="text-gray-600 text-xs font-mono border border-gray-700 px-2 py-1 rounded">HD</span>
+                </div>
+              </div>
+            </div>
+
+            <div data-aos="fade-left">
+              <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                
+                <div class="relative p-2 bg-gray-900 ring-1 ring-gray-800 rounded-3xl">
+                  <div class="aspect-video rounded-2xl overflow-hidden relative">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 pointer-events-none z-10"></div>
+                    
+                    <video controls class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" preload="metadata">
+                      <source src="videos/Galapagos.mp4#t=0.1" type="video/mp4" />
+                      Tu navegador no soporta videos.
+                    </video>
+                  </div>
+                </div>
+
+                <div class="mt-6 flex items-center justify-between px-2">
+                  <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-lg">
+                      <i class="ri-play-fill text-white text-xl ml-0.5"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-white font-bold text-xl leading-tight group-hover:text-cyan-400 transition-colors">Galápagos Encantadas</h4>
+                      <p class="text-gray-500 text-sm">Patrimonio Natural</p>
+                    </div>
+                  </div>
+                  <span class="text-gray-600 text-xs font-mono border border-gray-700 px-2 py-1 rounded">4K</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="container mx-auto my-20 px-4"
+        id="contacto"
+        data-aos="fade-up"
+      >
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-5xl font-bold text-green-500 mb-4">
+            Planifica tu Viaje
+          </h2>
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            Déjanos tus datos y diseñaremos una experiencia a tu medida en el
+            País de los 4 Mundos.
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto relative group">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-yellow-400 via-blue-600 to-red-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"
+          ></div>
+
+          <div
+            class="relative bg-gray-900 border border-gray-700 shadow-2xl rounded-2xl p-8 md:p-10"
+          >
             <form
-              class="row g-4 needs-validation"
-              novalidate
               action="procesar_formulario.php"
               method="POST"
+              class="space-y-6"
             >
-              <div class="col-md-6">
-                <label for="nombre" class="form-label text-info fw-bold small"
-                  >Nombre Completo *</label
-                >
-                <div class="input-group">
-                  <span class="input-group-text border-secondary"
-                    ><i class="bi bi-person-fill"></i
-                  ></span>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="col-span-1">
+                  <label
+                    for="nombre"
+                    class="block text-sm font-bold text-gray-300 mb-2"
+                    >Nombre Completo *</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <i class="ri-user-fill text-cyan-500"></i>
+                    </div>
+                    <input
+                      type="text"
+                      id="nombre"
+                      name="nombre"
+                      required
+                      placeholder="Tu nombre"
+                      class="block w-full pl-10 pr-3 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-span-1">
+                  <label
+                    for="email"
+                    class="block text-sm font-bold text-gray-300 mb-2"
+                    >Correo Electrónico *</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <i class="ri-mail-fill text-cyan-500"></i>
+                    </div>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      placeholder="tucorreo@ejemplo.com"
+                      class="block w-full pl-10 pr-3 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-span-1">
+                  <label
+                    for="telefono"
+                    class="block text-sm font-bold text-gray-300 mb-2"
+                    >Teléfono</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <i class="ri-phone-fill text-cyan-500"></i>
+                    </div>
+                    <input
+                      type="tel"
+                      id="telefono"
+                      name="telefono"
+                      placeholder="+593 99 999 999"
+                      class="block w-full pl-10 pr-3 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-span-1">
+                  <label
+                    for="pais"
+                    class="block text-sm font-bold text-gray-300 mb-2"
+                    >País de Origen *</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <i class="ri-map-pin-fill text-cyan-500"></i>
+                    </div>
+                    <input
+                      type="text"
+                      id="pais"
+                      name="pais"
+                      required
+                      placeholder="Ej: México, España..."
+                      class="block w-full pl-10 pr-3 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-span-1">
+                  <label
+                    for="region"
+                    class="block text-sm font-bold text-gray-300 mb-2"
+                    >Región de Interés *</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <i class="ri-compass-3-fill text-cyan-500"></i>
+                    </div>
+                    <select
+                      id="region"
+                      name="region"
+                      required
+                      class="block w-full pl-10 pr-3 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white appearance-none focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all cursor-pointer"
+                    >
+                      <option value="" class="text-gray-500">
+                        Selecciona una opción...
+                      </option>
+                      <option value="costa">Costa</option>
+                      <option value="sierra">Sierra</option>
+                      <option value="amazonia">Amazonía</option>
+                      <option value="galapagos">Galápagos</option>
+                      <option value="todas">Todo el país</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-span-1">
+                  <label
+                    for="presupuesto"
+                    class="block text-sm font-bold text-gray-300 mb-2"
+                    >Presupuesto (USD)</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <i class="ri-money-dollar-circle-fill text-cyan-500"></i>
+                    </div>
+                    <select
+                      id="presupuesto"
+                      name="presupuesto"
+                      class="block w-full pl-10 pr-3 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white appearance-none focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all cursor-pointer"
+                    >
+                      <option value="">Rango estimado...</option>
+                      <option value="500-1000">$500 - $1,000</option>
+                      <option value="1000-2500">$1,000 - $2,500</option>
+                      <option value="2500-5000">$2,500 - $5,000</option>
+                      <option value="5000+">Más de $5,000</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-span-1">
+                  <label
+                    for="fecha_viaje"
+                    class="block text-sm font-bold text-gray-300 mb-2"
+                    >Fecha Estimada</label
+                  >
                   <input
-                    type="text"
-                    class="form-control border-secondary focus-ring focus-ring-info"
-                    id="nombre"
-                    name="nombre"
-                    required
-                    placeholder="Ej: Juan Pérez"
+                    type="date"
+                    id="fecha_viaje"
+                    name="fecha_viaje"
+                    class="block w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
                   />
                 </div>
-              </div>
 
-              <div class="col-md-6">
-                <label for="email" class="form-label text-info fw-bold small"
-                  >Correo Electrónico *</label
-                >
-                <div class="input-group">
-                  <span class="input-group-text border-secondary"
-                    ><i class="bi bi-envelope-fill"></i
-                  ></span>
-                  <input
-                    type="email"
-                    class="form-control border-secondary"
-                    id="email"
-                    name="email"
-                    required
-                    placeholder="ejemplo@correo.com"
-                  />
+                <div class="col-span-1">
+                  <label
+                    for="duracion"
+                    class="block text-sm font-bold text-gray-300 mb-2"
+                    >Duración (días)</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <i class="ri-time-fill text-cyan-500"></i>
+                    </div>
+                    <input
+                      type="number"
+                      id="duracion"
+                      name="duracion"
+                      min="1"
+                      placeholder="Ej: 15"
+                      class="block w-full pl-10 pr-3 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-span-1 md:col-span-2">
+                  <label
+                    for="personas"
+                    class="block text-sm font-bold text-gray-300 mb-2"
+                    >Número de Personas *</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <i class="ri-group-fill text-cyan-500"></i>
+                    </div>
+                    <input
+                      type="number"
+                      id="personas"
+                      name="personas"
+                      min="1"
+                      max="50"
+                      required
+                      placeholder="Ej: 2 adultos, 1 niño"
+                      class="block w-full pl-10 pr-3 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                    />
+                  </div>
                 </div>
               </div>
+              <div class="border-t border-gray-700 my-6"></div>
 
-              <div class="col-md-6">
-                <label for="telefono" class="form-label text-info fw-bold small"
-                  >Teléfono</label
-                >
-                <div class="input-group">
-                  <span class="input-group-text border-secondary"
-                    ><i class="bi bi-telephone-fill"></i
-                  ></span>
-                  <input
-                    type="tel"
-                    class="form-control border-secondary"
-                    id="telefono"
-                    name="telefono"
-                    placeholder="+593 99 123 4567"
-                  />
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <label for="pais" class="form-label text-info fw-bold small"
-                  >País de Origen *</label
-                >
-                <div class="input-group">
-                  <span class="input-group-text border-secondary"
-                    ><i class="bi bi-geo-alt-fill"></i
-                  ></span>
-                  <input
-                    type="text"
-                    class="form-control border-secondary"
-                    id="pais"
-                    name="pais"
-                    required
-                    placeholder="Ej: España, México, USA"
-                  />
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <label for="region" class="form-label text-info fw-bold small"
-                  >Región de Interés *</label
-                >
-                <select
-                  class="form-select border-secondary"
-                  id="region"
-                  name="region"
-                  required
-                >
-                  <option value="" selected>Selecciona una región...</option>
-                  <option value="costa">Costa</option>
-                  <option value="sierra">Sierra</option>
-                  <option value="amazonia">Amazonía</option>
-                  <option value="galapagos">Galápagos</option>
-                  <option value="todas">Todo el país</option>
-                </select>
-              </div>
-
-              <div class="col-md-6">
+              <div>
                 <label
-                  for="presupuesto"
-                  class="form-label text-info fw-bold small"
-                  >Presupuesto (USD)</label
-                >
-                <select
-                  class="form-select border-secondary"
-                  id="presupuesto"
-                  name="presupuesto"
-                >
-                  <option value="">Selecciona un rango</option>
-                  <option value="500-1000">$500 - $1,000</option>
-                  <option value="1000-2500">$1,000 - $2,500</option>
-                  <option value="2500-5000">$2,500 - $5,000</option>
-                  <option value="5000+">Más de $5,000</option>
-                </select>
-              </div>
-
-              <div class="col-md-6">
-                <label
-                  for="fecha_viaje"
-                  class="form-label text-info fw-bold small"
-                  >Fecha Estimada</label
-                >
-                <input
-                  type="date"
-                  class="form-control border-secondary"
-                  id="fecha_viaje"
-                  name="fecha_viaje"
-                />
-              </div>
-
-              <div class="col-md-6">
-                <label for="duracion" class="form-label text-info fw-bold small"
-                  >Duración (días)</label
-                >
-                <input
-                  type="number"
-                  class="form-control border-secondary"
-                  id="duracion"
-                  name="duracion"
-                  min="1"
-                  max="365"
-                  placeholder="Ej: 15"
-                />
-              </div>
-
-              <div class="col-12">
-                <label for="personas" class="form-label text-info fw-bold small"
-                  >Número de Personas *</label
-                >
-                <input
-                  type="number"
-                  class="form-control border-secondary"
-                  id="personas"
-                  name="personas"
-                  min="1"
-                  max="50"
-                  required
-                  placeholder="Ej: 2 adultos, 1 niño"
-                />
-              </div>
-
-              <div class="col-12 mt-4">
-                <label class="form-label text-info fw-bold small mb-3"
+                  class="block text-sm font-bold text-cyan-400 mb-3 uppercase tracking-wider"
                   >Tipo de Turismo *</label
                 >
-                <div class="d-flex flex-column gap-2 ps-2">
-                  <div class="form-check">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <label
+                    class="flex items-center p-3 border border-gray-700 rounded-lg bg-gray-800/50 hover:bg-gray-700 cursor-pointer transition-colors group"
+                  >
                     <input
-                      class="form-check-input"
                       type="radio"
                       name="tipo_turismo"
-                      id="tur1"
                       value="natural"
                       required
+                      class="w-5 h-5 text-green-500 bg-gray-900 border-gray-500 focus:ring-green-500 focus:ring-2"
                     />
-                    <label class="form-check-label" for="tur1">
-                      <i class="bi bi-tree-fill text-success me-2"></i> Natural
-                      - Ecoturismo y vida silvestre
-                    </label>
-                  </div>
-                  <div class="form-check">
+                    <span
+                      class="ml-3 text-gray-300 group-hover:text-white transition-colors"
+                    >
+                      <i class="ri-plant-fill text-green-500 mr-2"></i> Natural
+                    </span>
+                  </label>
+
+                  <label
+                    class="flex items-center p-3 border border-gray-700 rounded-lg bg-gray-800/50 hover:bg-gray-700 cursor-pointer transition-colors group"
+                  >
                     <input
-                      class="form-check-input"
                       type="radio"
                       name="tipo_turismo"
-                      id="tur2"
                       value="cultural"
+                      class="w-5 h-5 text-yellow-500 bg-gray-900 border-gray-500 focus:ring-yellow-500 focus:ring-2"
                     />
-                    <label class="form-check-label" for="tur2">
-                      <i class="bi bi-bank2 text-warning me-2"></i> Cultural -
-                      Historia y tradiciones
-                    </label>
-                  </div>
-                  <div class="form-check">
+                    <span
+                      class="ml-3 text-gray-300 group-hover:text-white transition-colors"
+                    >
+                      <i class="ri-bank-fill text-yellow-500 mr-2"></i> Cultural
+                    </span>
+                  </label>
+
+                  <label
+                    class="flex items-center p-3 border border-gray-700 rounded-lg bg-gray-800/50 hover:bg-gray-700 cursor-pointer transition-colors group"
+                  >
                     <input
-                      class="form-check-input"
                       type="radio"
                       name="tipo_turismo"
-                      id="tur3"
                       value="aventura"
+                      class="w-5 h-5 text-red-500 bg-gray-900 border-gray-500 focus:ring-red-500 focus:ring-2"
                     />
-                    <label class="form-check-label" for="tur3">
-                      <i class="bi bi-bicycle text-danger me-2"></i> Aventura -
-                      Deportes extremos y trekking
-                    </label>
-                  </div>
-                  <div class="form-check">
+                    <span
+                      class="ml-3 text-gray-300 group-hover:text-white transition-colors"
+                    >
+                      <i class="ri-riding-fill text-red-500 mr-2"></i> Aventura
+                    </span>
+                  </label>
+
+                  <label
+                    class="flex items-center p-3 border border-gray-700 rounded-lg bg-gray-800/50 hover:bg-gray-700 cursor-pointer transition-colors group"
+                  >
                     <input
-                      class="form-check-input"
                       type="radio"
                       name="tipo_turismo"
-                      id="tur4"
                       value="gastronomico"
+                      class="w-5 h-5 text-cyan-500 bg-gray-900 border-gray-500 focus:ring-cyan-500 focus:ring-2"
                     />
-                    <label class="form-check-label" for="tur4">
-                      <i class="bi bi-cup-hot-fill text-info me-2"></i>
-                      Gastronómico - Sabores auténticos
-                    </label>
-                  </div>
+                    <span
+                      class="ml-3 text-gray-300 group-hover:text-white transition-colors"
+                    >
+                      <i class="ri-cup-fill text-cyan-400 mr-2"></i>
+                      Gastronómico
+                    </span>
+                  </label>
                 </div>
               </div>
 
-              <div class="col-12 mt-4">
-                <label class="form-label text-info fw-bold small mb-3"
+              <div class="mt-4">
+                <label
+                  class="block text-sm font-bold text-cyan-400 mb-3 uppercase tracking-wider"
                   >Actividades de Interés</label
                 >
-                <div class="row g-3 ps-2">
-                  <div class="col-md-6">
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value="senderismo"
-                        id="act1"
-                        name="actividades[]"
-                      />
-                      <label class="form-check-label" for="act1"
-                        ><i class="bi bi-activity me-1 text-danger"></i>
-                        Senderismo y trekking</label
-                      >
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value="buceo"
-                        id="act2"
-                        name="actividades[]"
-                      />
-                      <label class="form-check-label" for="act2"
-                        ><i class="bi bi-water me-1 text-primary"></i> Buceo y
-                        snorkel</label
-                      >
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value="fauna"
-                        id="act3"
-                        name="actividades[]"
-                      />
-                      <label class="form-check-label" for="act3"
-                        ><i class="bi bi-camera-fill me-1 text-success"></i>
-                        Observación de fauna</label
-                      >
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value="volcanes"
-                        id="act4"
-                        name="actividades[]"
-                      />
-                      <label class="form-check-label" for="act4"
-                        ><i class="bi bi-fire me-1 text-warning"></i> Visita a
-                        volcanes</label
-                      >
-                    </div>
-                  </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <label
+                    class="flex items-center space-x-3 cursor-pointer group"
+                  >
+                    <input
+                      type="checkbox"
+                      name="actividades[]"
+                      value="senderismo"
+                      class="w-5 h-5 rounded border-gray-500 bg-gray-900 text-cyan-600 focus:ring-cyan-500"
+                    />
+                    <span
+                      class="text-gray-300 group-hover:text-white transition-colors"
+                      >Senderismo y Trekking</span
+                    >
+                  </label>
+                  <label
+                    class="flex items-center space-x-3 cursor-pointer group"
+                  >
+                    <input
+                      type="checkbox"
+                      name="actividades[]"
+                      value="buceo"
+                      class="w-5 h-5 rounded border-gray-500 bg-gray-900 text-cyan-600 focus:ring-cyan-500"
+                    />
+                    <span
+                      class="text-gray-300 group-hover:text-white transition-colors"
+                      >Buceo y Snorkel</span
+                    >
+                  </label>
+                  <label
+                    class="flex items-center space-x-3 cursor-pointer group"
+                  >
+                    <input
+                      type="checkbox"
+                      name="actividades[]"
+                      value="fauna"
+                      class="w-5 h-5 rounded border-gray-500 bg-gray-900 text-cyan-600 focus:ring-cyan-500"
+                    />
+                    <span
+                      class="text-gray-300 group-hover:text-white transition-colors"
+                      >Observación de Fauna</span
+                    >
+                  </label>
+                  <label
+                    class="flex items-center space-x-3 cursor-pointer group"
+                  >
+                    <input
+                      type="checkbox"
+                      name="actividades[]"
+                      value="volcanes"
+                      class="w-5 h-5 rounded border-gray-500 bg-gray-900 text-cyan-600 focus:ring-cyan-500"
+                    />
+                    <span
+                      class="text-gray-300 group-hover:text-white transition-colors"
+                      >Visita a Volcanes</span
+                    >
+                  </label>
                 </div>
               </div>
 
-              <div class="col-12 mt-4">
-                <label for="mensaje" class="form-label text-info fw-bold small"
+              <div class="mt-6">
+                <label
+                  for="mensaje"
+                  class="block text-sm font-bold text-gray-300 mb-2"
                   >Cuéntanos sobre tu viaje ideal *</label
                 >
-                <div class="position-relative">
-                  <textarea
-                    class="form-control border-secondary"
-                    id="mensaje"
-                    name="mensaje"
-                    rows="5"
-                    required
-                    placeholder="Ej: Me gustaría visitar las Islas Galápagos y comer encebollado..."
-                  ></textarea>
-                </div>
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  rows="4"
+                  required
+                  placeholder="Describe tus expectativas..."
+                  class="block w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                ></textarea>
               </div>
 
               <div
-                class="col-12 d-flex justify-content-between align-items-center mt-5"
+                class="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 pt-4 border-t border-gray-800"
               >
                 <button
                   type="reset"
-                  class="btn btn-outline-light px-4 py-2 rounded-3"
+                  class="text-gray-400 hover:text-white text-sm font-semibold flex items-center transition-colors cursor-pointer"
                 >
-                  <i class="bi bi-trash3 me-2"></i> Borrar
+                  <i class="ri-refresh-line mr-2"></i> Limpiar formulario
                 </button>
+
                 <button
                   type="submit"
-                  class="btn btn-success px-5 py-2 rounded-3 shadow fw-bold"
+                  class="w-full sm:w-auto bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center cursor-pointer"
                 >
-                  <i class="bi bi-send-fill me-2"></i> Enviar Solicitud
+                  <span class="mr-2">Enviar Solicitud</span>
+                  <i class="ri-send-plane-fill"></i>
                 </button>
               </div>
             </form>
@@ -984,183 +1321,141 @@
       </section>
     </main>
 
-    <footer class="bg-black text-white pt-5 pb-3 mt-5">
-      <div class="d-flex w-100 mb-5">
-        <div class="flex-fill bg-warning p-1"></div>
-        <div class="flex-fill bg-primary p-1"></div>
-        <div class="flex-fill bg-danger p-1"></div>
-      </div>
+   <footer class="relative bg-gray-950 pt-20 pb-10 overflow-hidden border-t border-gray-900">
+      
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 via-blue-600 to-red-600 shadow-[0_0_20px_rgba(37,99,235,0.8)]"></div>
 
-      <div class="container">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-          <div class="col mb-4">
-            <h5 class="text-success fw-bold text-uppercase mb-3">
-              Ecuador Turístico
-            </h5>
-            <p class="text-secondary small">
-              Descubre los cuatro mundos en un solo lugar. La mejor guía para tu
-              próxima aventura.
-            </p>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-900/5 rounded-full blur-[100px] pointer-events-none"></div>
 
-            <div class="mt-4 pt-3 border-top border-secondary">
-              <p class="small text-white-50 mb-0">Desarrollado por:</p>
-              <p class="fw-bold text-white fs-5">Johann Lagla</p>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          
+          <div class="space-y-6">
+            <div>
+              <h5 class="text-2xl font-black uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600 mb-4">
+                Ecuador Turístico
+              </h5>
+              <p class="text-gray-400 text-sm leading-relaxed font-light">
+                Descubre los cuatro mundos en un solo lugar. La guía definitiva para tu próxima gran aventura en el centro del planeta.
+              </p>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-xl p-4 backdrop-blur-sm hover:bg-white/10 transition-colors duration-300">
+              <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">Desarrollado por:</p>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-blue-600 flex items-center justify-center text-white font-bold text-xs shadow-lg">JL</div>
+                <p class="font-bold text-white text-lg">Johann Lagla</p>
+              </div>
             </div>
           </div>
 
-          <div class="col mb-4">
-            <h5 class="text-white fw-bold mb-3">Enlaces Rápidos</h5>
-            <ul class="list-unstyled">
-              <li class="mb-2">
-                <a
-                  href="#inicio"
-                  class="text-secondary text-decoration-none link-light"
-                  >Inicio</a
-                >
+          <div>
+            <h5 class="text-white font-bold mb-6 text-lg border-l-4 border-green-500 pl-3">Navegación</h5>
+            <ul class="space-y-3">
+              <li>
+                <a href="#inicio" class="group flex items-center text-gray-400 hover:text-white transition-all duration-300">
+                  <i class="ri-arrow-right-s-line mr-2 text-green-500 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300"></i>
+                  <span class="group-hover:translate-x-1 transition-transform">Inicio</span>
+                </a>
               </li>
-              <li class="mb-2">
-                <a
-                  href="#destinos"
-                  class="text-secondary text-decoration-none link-light"
-                  >Destinos</a
-                >
+              <li>
+                <a href="#destinos" class="group flex items-center text-gray-400 hover:text-white transition-all duration-300">
+                  <i class="ri-arrow-right-s-line mr-2 text-green-500 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300"></i>
+                  <span class="group-hover:translate-x-1 transition-transform">Destinos</span>
+                </a>
               </li>
-              <li class="mb-2">
-                <a
-                  href="#videos"
-                  class="text-secondary text-decoration-none link-light"
-                  >Galería de Videos</a
-                >
+              <li>
+                <a href="#videos" class="group flex items-center text-gray-400 hover:text-white transition-all duration-300">
+                  <i class="ri-arrow-right-s-line mr-2 text-green-500 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300"></i>
+                  <span class="group-hover:translate-x-1 transition-transform">Galería de Videos</span>
+                </a>
               </li>
-              <li class="mb-2">
-                <a
-                  href="#estadisticas"
-                  class="text-secondary text-decoration-none link-light"
-                  >Datos Curiosos</a
-                >
+              <li>
+                <a href="#estadisticas" class="group flex items-center text-gray-400 hover:text-white transition-all duration-300">
+                  <i class="ri-arrow-right-s-line mr-2 text-green-500 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300"></i>
+                  <span class="group-hover:translate-x-1 transition-transform">Datos Curiosos</span>
+                </a>
               </li>
             </ul>
           </div>
 
-          <div class="col mb-4">
-            <h5 class="text-white fw-bold mb-3">Contacto Directo</h5>
-            <ul class="list-unstyled">
-              <li class="mb-3 d-flex align-items-start">
-                <i class="bi bi-geo-alt-fill text-danger me-2 fs-5 mt-1"></i>
+          <div>
+            <h5 class="text-white font-bold mb-6 text-lg border-l-4 border-yellow-500 pl-3">Contacto</h5>
+            <ul class="space-y-5">
+              <li class="flex items-start group">
+                <div class="shrink-0 w-10 h-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center mr-4 group-hover:border-red-500 group-hover:text-red-500 transition-colors duration-300">
+                  <i class="ri-map-pin-fill text-gray-400 group-hover:text-red-500 transition-colors"></i>
+                </div>
                 <div>
-                  <span class="d-block text-white fw-semibold">Ubicación:</span>
-                  <span class="text-secondary">Latacunga - Cotopaxi</span>
+                  <span class="block text-gray-500 text-xs uppercase tracking-wider mb-0.5">Visítanos</span>
+                  <span class="text-gray-300 font-medium">Latacunga - Cotopaxi</span>
                 </div>
               </li>
-              <li class="mb-3 d-flex align-items-start">
-                <i class="bi bi-whatsapp text-success me-2 fs-5 mt-1"></i>
+              <li class="flex items-start group">
+                <div class="shrink-0 w-10 h-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center mr-4 group-hover:border-green-500 group-hover:text-green-500 transition-colors duration-300">
+                  <i class="ri-whatsapp-fill text-gray-400 group-hover:text-green-500 transition-colors"></i>
+                </div>
                 <div>
-                  <span class="d-block text-white fw-semibold"
-                    >Teléfono / WhatsApp:</span
-                  >
-                  <a
-                    href="https://wa.me/593989167613"
-                    class="text-secondary text-decoration-none link-light"
-                    >0989167613</a
-                  >
+                  <span class="block text-gray-500 text-xs uppercase tracking-wider mb-0.5">Escríbenos</span>
+                  <a href="https://wa.me/593989167613" class="text-gray-300 font-medium hover:text-green-400 transition-colors">
+                    0989167613
+                  </a>
                 </div>
               </li>
             </ul>
           </div>
 
-          <div class="col mb-4">
-            <h5 class="text-white fw-bold mb-3">Síguenos</h5>
-            <div class="d-flex gap-3">
-              <a href="#" class="btn btn-outline-light rounded-circle p-2 lh-1">
-                <i class="bi bi-facebook fs-4"></i>
+          <div>
+            <h5 class="text-white font-bold mb-6 text-lg border-l-4 border-blue-600 pl-3">Síguenos</h5>
+            <p class="text-gray-400 text-sm mb-6">Únete a nuestra comunidad de viajeros.</p>
+            
+            <div class="flex gap-4">
+              <a href="#" class="w-12 h-12 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white hover:border-blue-600 hover:scale-110 hover:shadow-[0_0_15px_rgba(37,99,235,0.5)] transition-all duration-300">
+                <i class="ri-facebook-fill text-xl"></i>
               </a>
-              <a href="#" class="btn btn-outline-light rounded-circle p-2 lh-1">
-                <i class="bi bi-instagram fs-4"></i>
+              <a href="#" class="w-12 h-12 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:bg-pink-600 hover:text-white hover:border-pink-600 hover:scale-110 hover:shadow-[0_0_15px_rgba(219,39,119,0.5)] transition-all duration-300">
+                <i class="ri-instagram-fill text-xl"></i>
               </a>
-              <a href="#" class="btn btn-outline-light rounded-circle p-2 lh-1">
-                <i class="bi bi-tiktok fs-4"></i>
+              <a href="#" class="w-12 h-12 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white hover:border-gray-600 hover:scale-110 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-300">
+                <i class="ri-tiktok-fill text-xl"></i>
               </a>
             </div>
           </div>
         </div>
 
-        <hr class="border-secondary mt-4" />
-        <div class="text-center pt-2">
-          <p class="small text-secondary mb-0">
+        <div class="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p class="text-sm text-gray-600">
             © 2025 Ecuador Turístico. Todos los derechos reservados.
           </p>
+          <div class="flex gap-6 text-sm text-gray-600">
+            <a href="#" class="hover:text-gray-400 transition-colors">Privacidad</a>
+            <a href="#" class="hover:text-gray-400 transition-colors">Términos</a>
+          </div>
         </div>
       </div>
     </footer>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
       (() => {
         "use strict";
 
-        // 1. Inicializar AOS
+        // 1. Inicializar AOS (Animaciones)
         AOS.init({
           once: true,
           offset: 100,
         });
 
-        // 2. Validación Bootstrap
-        document.querySelectorAll(".needs-validation").forEach((form) => {
-          form.addEventListener("submit", (e) => {
-            if (!form.checkValidity()) {
-              e.preventDefault();
-              e.stopPropagation();
-            }
-            form.classList.add("was-validated");
+        // 2. Lógica para el Menú Móvil
+        const menuBtn = document.getElementById("menu-btn");
+        const menuItems = document.getElementById("menu-items");
+
+        if (menuBtn && menuItems) {
+          menuBtn.addEventListener("click", () => {
+            menuItems.classList.toggle("hidden");
           });
-        });
-
-        // 3. Zoom en tarjetas con JS puro
-        document.querySelectorAll(".zoom-card").forEach((card) => {
-          const img = card.querySelector("img");
-          if (img) {
-            img.style.transition = "transform 0.5s ease";
-            card.addEventListener(
-              "mouseenter",
-              () => (img.style.transform = "scale(1.1)")
-            );
-            card.addEventListener(
-              "mouseleave",
-              () => (img.style.transform = "scale(1.0)")
-            );
-          }
-        });
-
-        // 4. Efecto Hover en Navbar Links (Cajas interactivas)
-        // Seleccionamos todos los enlaces con la clase 'nav-box-link'
-        document.querySelectorAll(".nav-box-link").forEach((link) => {
-          // Estilos base para transición suave
-          link.style.transition = "all 0.3s ease";
-          link.style.border = "2px solid transparent";
-          link.style.borderRadius = "8px"; // Un poco redondeado el cuadro
-
-          link.addEventListener("mouseenter", () => {
-            // Al pasar el mouse: fondo blanco transparente, borde, moverse arriba y sombra
-            link.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
-            link.style.borderColor = "#ffffff";
-            link.style.transform = "translateY(-3px)";
-            link.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
-          });
-
-          link.addEventListener("mouseleave", () => {
-            // Al salir el mouse: volver al estado original
-            link.style.backgroundColor = "transparent";
-            link.style.borderColor = "transparent";
-            link.style.transform = "translateY(0)";
-            link.style.boxShadow = "none";
-          });
-        });
+        }
       })();
     </script>
   </body>
